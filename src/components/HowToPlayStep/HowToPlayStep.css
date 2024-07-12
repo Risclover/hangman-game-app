@@ -1,0 +1,39 @@
+.how-to-play-step-container {
+  background: white;
+  height: 550px;
+  width: 384px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  padding: 60px 45px;
+  /* display: grid; */
+  gap: 40px;
+  /* grid-template-rows: auto auto auto; */
+  text-align: center;
+}
+
+.how-to-play-step-container h2 {
+  font-size: 88px;
+  line-height: 120%;
+  font-weight: 100;
+  color: var(--blue);
+}
+
+.how-to-play-step-container h3 {
+  font-size: 48px;
+  font-weight: 100;
+  line-height: 120%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.how-to-play-step-container p {
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  color: #887dc0;
+  font-weight: 100;
+}

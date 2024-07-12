@@ -1,42 +1,114 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: MouseMemoirs-Regular;
+  src: url("assets/fonts/MouseMemoirs-Regular.ttf");
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.info-page-container {
+  height: 100%;
+  padding: 80px 112px;
+  min-height: 100vh;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.info-page-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#1a043a 0%, #15127b 70%, #2b1677 100%);
+  opacity: 0.7;
+  z-index: -2;
+  height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
+.info-page-foreground {
+  z-index: 10;
+}
+
+.info-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-page-title {
+  font-size: 136px;
+  background: -webkit-linear-gradient(#67b6ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "MouseMemoirs-Regular", sans-serif;
+  position: relative;
+  letter-spacing: -0.5%;
+  line-height: 120%;
+  font-weight: 100;
+}
+
+.info-page-title:after {
+  text-shadow: 0px 8px 14px black;
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 16px rgba(36, 48, 65, 1);
+  font-size: 1em;
+}
+
+.how-to-play-steps {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 32px;
+  vertical-align: top;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 50px 32px;
+  margin-top: 155px;
+}
+
+.lds-ring {
+  /* change color here */
+  color: #1c4c5b;
+}
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

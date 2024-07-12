@@ -1,0 +1,8 @@
+:root {
+  --blue: #2463ff;
+  --navy: #261676;
+  --light-blue: #5b8aff;
+  --dark-grey: #243041;
+  --pink-gradient: linear-gradient(#fe71fe 0%, #fe71fe 20%, #7199ff 100%);
+  --pink-gradient-hover: linear-gradient(#ff95ff 0%, #ff95ff 20%, #9fb0ff 100%);
+}

@@ -1,0 +1,23 @@
+.back-btn {
+  background: var(--pink-gradient);
+  border-radius: 999px;
+  width: 94px;
+  height: 94px;
+  box-shadow: inset 0px -6px 0 7px rgba(157, 45, 245, 0.25);
+  padding-top: 22px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.back-btn img {
+  height: 38px;
+  width: 41px;
+}
+
+.back-btn:hover {
+  background: var(--pink-gradient-hover);
+}

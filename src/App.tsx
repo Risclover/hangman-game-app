@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import Homepage from "./pages/Homepage";
+import HowToPlayPage from "./pages/HowToPlayPage";
+import CategoriesPage from "./pages/CategoriesPage";
+import "./App.css";
+import "./assets/variables.css";
+import GameBoardPage from "./pages/GameBoardPage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState<number>(0);
+  const [category, setCategory] = useState<string>("");
+  const [logoLoaded, setLogoLoaded] = useState<boolean>(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(
+    (imgLoaded && logoLoaded) || false
+  );
+
+  const pages = [
+    <Homepage
+      setImgLoaded={setImgLoaded}
+      setLogoLoaded={setLogoLoaded}
+      setPage={setPage}
+    />,
+    <HowToPlayPage setPage={setPage} title="How to Play" />,
+    <CategoriesPage
+      setPage={setPage}
+      title="Pick a Category"
+      setCategory={setCategory}
+    />,
+    <GameBoardPage />,
+  ];
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleLoad();
+    }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  console.log("isLoaded:", isLoaded);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="main-container">
+      {!isLoaded && (
+        <div className="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      )}
+      {isLoaded && pages.map((item, idx) => page === idx && item)}
+    </div>
+  );
 }
 
-export default App
+export default App;
