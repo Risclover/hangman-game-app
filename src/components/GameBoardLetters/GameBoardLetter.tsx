@@ -2,10 +2,15 @@ import React from "react";
 
 type Props = {
   letter: string;
+  handleGuessLetter: Function;
 };
 
 const GameBoardLetter = ({ letter }: Props) => {
-  return <div className="game-board-letter-container">{letter}</div>;
+  return (
+    <button className="game-board-letter-container">
+      {letter}
+    </button>
+  );
 };
 
 export default GameBoardLetter;

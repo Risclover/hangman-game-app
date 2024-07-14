@@ -14,17 +14,14 @@ type Props = {
 const GameBoardPageHeader = ({ category, setPage, lives }: Props) => {
   return (
     <div className="game-board-page-header">
-      <div className="game-board-page-background"></div>
-      <div className="game-board-page-foreground">
-        <div className="game-board-page-header-left">
-          <PrimaryBtn icon={Menu} setPage={setPage} />
-          <h1 className="category-title">{category}</h1>
-        </div>
-        <div className="game-board-page-header-right">
-          <PlayerLivesMeter lives={lives} />
-          <div className="heart-icon">
-            <img src={Heart} />
-          </div>
+      <div className="game-board-page-header-left">
+        <PrimaryBtn icon={Menu} setPage={setPage} />
+        <h1 className="category-title">{category}</h1>
+      </div>
+      <div className="game-board-page-header-right">
+        <PlayerLivesMeter lives={lives} />
+        <div className="heart-icon">
+          <img src={Heart} />
         </div>
       </div>
     </div>
