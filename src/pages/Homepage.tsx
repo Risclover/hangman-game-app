@@ -1,11 +1,12 @@
 import Logo from "/assets/images/logo.svg";
 import PlayIcon from "/assets/images/icon-play.svg";
 import "../assets/Homepage.css";
+import React, { SetStateAction } from "react";
 
 type Props = {
-  setPage: any;
-  setImgLoaded: any;
-  setLogoLoaded: any;
+  setPage: React.Dispatch<SetStateAction<number>>;
+  setImgLoaded: React.Dispatch<SetStateAction<boolean>>;
+  setLogoLoaded: React.Dispatch<SetStateAction<boolean>>;
 };
 
 const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {

@@ -1,9 +1,10 @@
+import React, { SetStateAction } from "react";
 import "./Category.css";
 
 type Props = {
   categoryName: string;
-  setCategory: any;
-  setPage: any;
+  setCategory: React.Dispatch<SetStateAction<string>>;
+  setPage: React.Dispatch<SetStateAction<number>>;
 };
 
 const Category = ({ categoryName, setCategory, setPage }: Props) => {

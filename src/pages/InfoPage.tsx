@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren, SetStateAction } from "react";
 import InfoPageHeader from "../components/InfoPageHeader/InfoPageHeader";
 
 type Props = {
-  setPage: any;
+  setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 

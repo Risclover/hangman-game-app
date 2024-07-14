@@ -1,12 +1,12 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import InfoPage from "./InfoPage";
 import Data from "../../data.json";
 import Category from "../components/Category/Category";
 
 type Props = {
   title: string;
-  setPage: any;
-  setCategory: any;
+  setPage: React.Dispatch<SetStateAction<number>>;
+  setCategory: React.Dispatch<SetStateAction<string>>;
 };
 
 const CategoriesPage = ({ title, setPage, setCategory }: Props) => {

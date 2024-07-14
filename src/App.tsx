@@ -7,6 +7,7 @@ import "./assets/variables.css";
 import GameBoardPage from "./pages/GameBoardPage";
 
 function App() {
+  const [lives, setLives] = useState<number>(8);
   const [page, setPage] = useState<number>(0);
   const [category, setCategory] = useState<string>("");
   const [logoLoaded, setLogoLoaded] = useState<boolean>(false);
@@ -27,7 +28,7 @@ function App() {
       title="Pick a Category"
       setCategory={setCategory}
     />,
-    <GameBoardPage />,
+    <GameBoardPage category={category} setPage={setPage} />,
   ];
 
   const handleLoad = () => {
@@ -35,10 +36,10 @@ function App() {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    let timer: number;
+    timer = setTimeout(() => {
       handleLoad();
     }, 4000);
-
     return () => {
       clearTimeout(timer);
     };
@@ -48,14 +49,7 @@ function App() {
 
   return (
     <div className="main-container">
-      {!isLoaded && (
-        <div className="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      )}
+      {!isLoaded && <div className="spinner"></div>}
       {isLoaded && pages.map((item, idx) => page === idx && item)}
     </div>
   );

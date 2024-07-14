@@ -1,4 +1,4 @@
-.back-btn {
+.primary-btn {
   background: var(--pink-gradient);
   border-radius: 999px;
   width: 94px;
@@ -13,11 +13,17 @@
   cursor: pointer;
 }
 
-.back-btn img {
+.primary-btn img {
   height: 38px;
   width: 41px;
 }
 
-.back-btn:hover {
+.primary-btn:hover {
   background: var(--pink-gradient-hover);
+}
+
+.primary-btn.centered {
+  align-items: center;
+  padding-top: 0;
+  margin-right: 57px;
 }

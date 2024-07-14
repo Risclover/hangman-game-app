@@ -1,15 +1,17 @@
-import BackBtn from "./BackBtn/BackBtn";
+import React, { SetStateAction } from "react";
+import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 import InfoPageTitle from "./InfoPageTitle";
+import BackBtnIcon from "/assets/images/icon-back.svg";
 
 type Props = {
-  setPage: any;
+  setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 
 const InfoPageHeader = ({ setPage, title }: Props) => {
   return (
     <div className="info-page-header">
-      <BackBtn setPage={setPage} />
+      <PrimaryBtn setPage={setPage} icon={BackBtnIcon} />
       <InfoPageTitle title={title} />
       <div></div>
     </div>

@@ -1,8 +1,9 @@
+import React, { SetStateAction } from "react";
 import HowToPlayStep from "../components/HowToPlayStep/HowToPlayStep";
 import InfoPage from "./InfoPage";
 
 type Props = {
-  setPage: any;
+  setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 
