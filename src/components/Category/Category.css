@@ -22,3 +22,7 @@
 .category-container:hover {
   background: #84a7ff;
 }
+
+.category-container:active {
+  box-shadow: none;
+}

@@ -7,7 +7,6 @@ import "./assets/variables.css";
 import GameBoardPage from "./pages/GameBoardPage";
 
 function App() {
-  const [lives, setLives] = useState<number>(8);
   const [page, setPage] = useState<number>(0);
   const [category, setCategory] = useState<string>("");
   const [logoLoaded, setLogoLoaded] = useState<boolean>(false);
