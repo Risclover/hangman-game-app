@@ -1,22 +1,15 @@
-import React, { SetStateAction } from "react";
+import React, { MouseEventHandler, SetStateAction } from "react";
 import "./PrimaryBtn.css";
 
 type Props = {
-  setPage: React.Dispatch<SetStateAction<number>>;
-  icon: string;
+  value: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const PrimaryBtn = ({ icon, setPage }: Props) => {
+const PrimaryBtn = ({ value, onClick }: Props) => {
   return (
-    <button
-      className={`${
-        icon === "/assets/images/icon-back.svg"
-          ? "primary-btn"
-          : "primary-btn centered"
-      }`}
-      onClick={() => setPage(0)}
-    >
-      <img src={icon} />
+    <button className="primary-btn" onClick={onClick}>
+      {value}
     </button>
   );
 };

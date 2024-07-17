@@ -6,16 +6,26 @@ import React, { SetStateAction } from "react";
 import PlayerLivesMeter from "../PlayerLivesMeter/PlayerLivesMeter";
 
 type Props = {
-  category: string;
+  category: string | null;
   setPage: React.Dispatch<SetStateAction<number>>;
   lives: number;
+  setShowPauseMenu: React.Dispatch<SetStateAction<boolean>>;
 };
 
-const GameBoardPageHeader = ({ category, setPage, lives }: Props) => {
+const GameBoardPageHeader = ({
+  category,
+  setPage,
+  lives,
+  setShowPauseMenu,
+}: Props) => {
   return (
     <div className="game-board-page-header">
       <div className="game-board-page-header-left">
-        <PrimaryBtn icon={Menu} setPage={setPage} />
+        <PrimaryBtn
+          setShowPauseMenu={setShowPauseMenu}
+          icon={Menu}
+          setPage={setPage}
+        />
         <h1 className="category-title">{category}</h1>
       </div>
       <div className="game-board-page-header-right">

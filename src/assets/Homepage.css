@@ -30,6 +30,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
+  width: 100%;
 }
 
 .play-button {
@@ -62,6 +63,7 @@
 .homepage-main-box-foreground {
   display: flex;
   flex-direction: column;
+  align-items: center;
   animation: fade-in 3s;
 }
 
@@ -106,5 +108,32 @@
   }
   to {
     opacity: 100;
+  }
+}
+
+@media (max-width: 500px) {
+  .hangman-logo img {
+    width: 263px;
+  }
+
+  .homepage-main-box {
+    width: 100%;
+    padding: 0 31px;
+    height: 481px;
+  }
+
+  .play-button {
+    width: 160px;
+    height: 160px;
+  }
+
+  .homepage-main-box-foreground {
+    padding: 0 31px;
+    width: 100%;
+  }
+
+  .how-to-play {
+    max-width: 260px;
+    width: 100%;
   }
 }

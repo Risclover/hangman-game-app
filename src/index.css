@@ -32,3 +32,19 @@ body {
   min-width: 320px;
   height: 100%;
 }
+
+@media (max-width: 1000px) {
+  body {
+    background-image: url("/assets/images/background-tablet.svg");
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    background-image: url("/assets/images/background-mobile.svg");
+  }
+
+  .main-container {
+    padding: 0 26px;
+  }
+}

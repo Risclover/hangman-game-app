@@ -1,22 +1,15 @@
-import React, { SetStateAction } from "react";
+import { MouseEventHandler } from "react";
 import "./Category.css";
 
 type Props = {
-  categoryName: string;
-  setCategory: React.Dispatch<SetStateAction<string>>;
-  setPage: React.Dispatch<SetStateAction<number>>;
+  category: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const Category = ({ categoryName, setCategory, setPage }: Props) => {
-  const startGame = (e: any) => {
-    e.preventDefault();
-    setCategory(categoryName);
-    setPage(3);
-  };
-
+const Category = ({ category, onClick }: Props) => {
   return (
-    <button className="category-container" onClick={startGame}>
-      {categoryName}
+    <button className="category-container" onClick={onClick}>
+      {category}
     </button>
   );
 };

@@ -1,0 +1,35 @@
+.game-board-line {
+  display: flex;
+  gap: 16px;
+}
+
+.game-board-letter {
+  background-color: var(--blue);
+  border-radius: 40px;
+  box-shadow: inset 0px -2px 0px 3px #140e66, inset 0px 1px 0px 6px #3c74ff;
+  width: 112px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 88px;
+  line-height: 120%;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.game-board-letter.blank {
+  color: pink;
+  opacity: 0.25;
+}
+
+.game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  height: 448px;
+  margin-left: 21px;
+}

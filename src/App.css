@@ -36,7 +36,7 @@
   -webkit-text-fill-color: transparent;
   font-family: "MouseMemoirs-Regular", sans-serif;
   position: relative;
-  letter-spacing: -0.5%;
+  letter-spacing: -0.05em;
   line-height: 120%;
   font-weight: 100;
 }
@@ -69,7 +69,7 @@
 
 .game-board-page-container {
   height: 100%;
-  padding: 80px 112px;
+  padding: 60px 112px 78px 112px;
   width: 100%;
   max-width: 1440px;
 }
@@ -87,7 +87,8 @@
 
 .game-board-page-foreground {
   width: 100%;
-  height: auto;
+  height: 100%;
+  position: relative;
 }
 
 .spinner {

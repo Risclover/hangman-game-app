@@ -1,22 +1,23 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import GameBoardLetter from "./GameBoardLetter";
 import "./GameBoardLetters.css";
 
-type Props = {};
+type Props = {
+  setGuessedLetters: React.Dispatch<SetStateAction<string[]>>;
+  guessedLetters: string[];
+  handleLetterClick: (letter: string) => void;
+};
 
-const GameBoardLetters = (props: Props) => {
+const GameBoardLetters = ({ handleLetterClick }: Props) => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-  const handleGuessLetter = () => {
-    e.preventDefault();
-  };
 
   return (
     <div className="game-board-letters-container">
       {Array.from(alphabet).map((letter) => (
         <GameBoardLetter
+          key={letter}
           letter={letter}
-          handleGuessLetter={handleGuessLetter}
+          handleLetterClick={handleLetterClick}
         />
       ))}
     </div>

@@ -2,6 +2,9 @@ import Logo from "/assets/images/logo.svg";
 import PlayIcon from "/assets/images/icon-play.svg";
 import "../assets/Homepage.css";
 import React, { SetStateAction } from "react";
+import PrimaryBtn from "../components/PrimaryBtn/PrimaryBtn";
+import CircleBtn from "../components/CircleBtn/CircleBtn";
+import BackIcon from "/assets/images/icon-back.svg";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
@@ -32,9 +35,7 @@ const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
             <button className="play-button" onClick={handlePlay}>
               <img onLoad={() => setImgLoaded(true)} src={PlayIcon} />
             </button>
-            <button className="how-to-play" onClick={handleClick}>
-              <div className="how-to-play-hover-bg"></div>How To Play
-            </button>
+            <PrimaryBtn onClick={handleClick} value="How to Play" />
           </div>
         </div>
       </div>
