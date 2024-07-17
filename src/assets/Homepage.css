@@ -46,15 +46,15 @@
   outline: 0;
   opacity: 1;
   margin-top: 129px;
+  margin-bottom: 58px;
 }
 
 .homepage-main-box-background {
   height: 100%;
   width: 100%;
-  opacity: 0.9;
   background: linear-gradient(
     rgba(52, 74, 186, 100) 0%,
-    rgba(0, 20, 121, 83) 100%
+    rgba(0, 20, 121, 0.83) 100%
   );
   border-radius: 72px;
   box-shadow: inset 0px -8px 0px 4px #140566, inset 0px 6px 0px 8px var(--blue);

@@ -19,7 +19,7 @@ const HowToPlayPage = ({ setPage, title }: Props) => {
       number: "02",
       title: "Guess Letters",
       content:
-        "Take turns guessing letters. The computer fills in the relevant blank spces if your guess is correct. If it's wrong, you lose some health, which empties after eight incorrect guesses.",
+        "Take turns guessing letters. The computer fills in the relevant blank spaces if your guess is correct. If it's wrong, you lose some health, which empties after eight incorrect guesses.",
     },
     {
       number: "03",

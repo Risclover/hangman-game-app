@@ -15,6 +15,12 @@ const PauseMenu = ({ setPage, title, setShowPauseMenu, resetGame }: Props) => {
     resetGame();
     setShowPauseMenu(false);
   };
+
+  const handleQuitGame = () => {
+    resetGame();
+    setPage(0);
+    setShowPauseMenu(false);
+  };
   return (
     <div className="pause-menu">
       <div className="pause-menu-background"></div>
@@ -26,14 +32,19 @@ const PauseMenu = ({ setPage, title, setShowPauseMenu, resetGame }: Props) => {
                 {title}
               </h1>
             </div>
-            <PrimaryBtn
-              value={title === "Paused" ? "Continue" : "Play Again!"}
-              onClick={() => setShowPauseMenu(false)}
-            />
-            <PrimaryBtn value="New Category" onClick={handleNewCategory} />
-
-            <div className="pause-menu-primary-btn">New Category</div>
-            <div className="pause-menu-quit-btn">Quit Game</div>
+            <div className="pause-menu-btns">
+              <PrimaryBtn
+                value={title === "Paused" ? "Continue" : "Play Again!"}
+                onClick={() => setShowPauseMenu(false)}
+              />
+              <PrimaryBtn value="New Category" onClick={handleNewCategory} />
+              <button
+                className="primary-btn pause-menu-quit-btn"
+                onClick={handleQuitGame}
+              >
+                Quit Game
+              </button>
+            </div>
           </div>
         </div>
       </div>

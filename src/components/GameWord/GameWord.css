@@ -17,6 +17,7 @@
   line-height: 120%;
   font-weight: 100;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .game-board-letter.blank {

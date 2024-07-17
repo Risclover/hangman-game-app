@@ -49,7 +49,6 @@ function App() {
       title="Pick a Category"
       setCategory={setCategory}
       handleStartGame={handleStartGame}
-      gameWord={gameWord}
     />,
     <GameBoardPage
       category={category}

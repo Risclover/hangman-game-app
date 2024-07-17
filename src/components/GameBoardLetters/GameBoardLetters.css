@@ -31,3 +31,14 @@
 .game-board-letter-container:disabled {
   opacity: 0.25;
 }
+
+.game-board-letter-container:hover {
+  background: var(--blue);
+  color: white;
+}
+
+.game-board-letter-container:disabled:hover {
+  cursor: default;
+  background: white;
+  color: var(--navy);
+}

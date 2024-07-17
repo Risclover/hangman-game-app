@@ -2,18 +2,16 @@
   text-transform: uppercase;
   font-family: "MouseMemoirs-Regular";
   border-radius: 40px;
-  padding: 12px;
+  padding: 12px 64px;
   font-size: 32px;
   line-height: 120%;
   letter-spacing: 0.05em;
   height: 62px;
-  width: 260px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     inset 0px -2px 0px 3px #140e66, inset 0px 1px 0px 6px #3c74ff;
   outline: 0;
   background-color: var(--blue);
   color: white;
-  margin-top: 58px;
   cursor: pointer;
   position: relative;
   font-weight: 100;

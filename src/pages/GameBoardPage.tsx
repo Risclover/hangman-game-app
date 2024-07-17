@@ -70,7 +70,6 @@ const GameBoardPage = ({
       <div className="game-board-page-background"></div>
       <div className="game-board-page-foreground">
         <GameBoardPageHeader
-          setPage={setPage}
           category={category}
           lives={lives}
           setShowPauseMenu={setShowPauseMenu}
