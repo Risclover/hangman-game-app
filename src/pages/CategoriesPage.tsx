@@ -18,8 +18,6 @@ interface Data {
 
 const data: Data = allData as Data;
 
-console.log("dataaa:", data);
-
 type Props = {
   title: string;
   setPage: React.Dispatch<SetStateAction<number>>;
@@ -36,10 +34,7 @@ const CategoriesPage = ({
   const selectCategory = (category: string) => {
     setCategory(category);
     const items = data.categories[category];
-
-    console.log("ITEMS:", items);
     const item = items[Math.floor(Math.random() * items.length)];
-    console.log("ITEM:", item);
     handleStartGame(category, item.name);
     setPage((prev) => prev + 1);
   };
