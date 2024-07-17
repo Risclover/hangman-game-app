@@ -28,6 +28,7 @@
   font-size: 134px;
   background: -webkit-linear-gradient(#67b6ff, #ffffff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "MouseMemoirs-Regular", sans-serif;
   position: relative;
