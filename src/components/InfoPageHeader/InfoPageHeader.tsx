@@ -2,6 +2,7 @@ import React, { SetStateAction } from "react";
 import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 import InfoPageTitle from "./InfoPageTitle";
 import BackBtnIcon from "/assets/images/icon-back.svg";
+import CircleBtn from "../CircleBtn/CircleBtn";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
@@ -11,7 +12,7 @@ type Props = {
 const InfoPageHeader = ({ setPage, title }: Props) => {
   return (
     <div className="info-page-header">
-      <PrimaryBtn setPage={setPage} icon={BackBtnIcon} />
+      <CircleBtn onClick={() => setPage(0)} value={BackBtnIcon} />
       <InfoPageTitle title={title} />
       <div></div>
     </div>
