@@ -1,6 +1,4 @@
-import React, { SetStateAction } from "react";
 import "./PauseMenu.css";
-import InfoPageTitle from "../InfoPageHeader/InfoPageTitle";
 import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 
 type Props = {
