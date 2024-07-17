@@ -3,10 +3,15 @@ type Props = {
 };
 
 const GameWordLetter = ({ value }: Props) => {
+  console.log("value:", value);
   return (
-    <div className={`game-board-letter${value === "_" ? " blank" : ""}`}>
-      {value !== "_" && value}
-    </div>
+    <>
+      {value !== " " && (
+        <div className={`game-board-letter${value === "_" ? " blank" : ""}`}>
+          {value !== "_" && value}
+        </div>
+      )}
+    </>
   );
 };
 

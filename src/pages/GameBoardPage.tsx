@@ -34,8 +34,7 @@ const GameBoardPage = ({
 
   useEffect(() => {
     if (lives === 0) {
-      confirm(`Game over! The word was ` + gameWord);
-      resetGame();
+      console.log("yay");
     }
 
     let currentWord = gameWord

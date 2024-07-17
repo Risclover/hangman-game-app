@@ -1,9 +1,12 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  key: number;
+  className?: string;
+};
 
-const PlayerLife = (props: Props) => {
-  return <div className="player-life"></div>;
+const PlayerLife = ({ className = "" }: Props) => {
+  return <div className={`player-life ${className}`}></div>;
 };
 
 export default PlayerLife;

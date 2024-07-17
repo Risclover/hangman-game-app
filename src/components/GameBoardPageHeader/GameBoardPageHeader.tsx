@@ -20,7 +20,7 @@ const GameBoardPageHeader = ({ category, lives, setShowPauseMenu }: Props) => {
         <h1 className="category-title">{category}</h1>
       </div>
       <div className="game-board-page-header-right">
-        <PlayerLivesMeter lives={lives} />
+        <PlayerLivesMeter lives={lives} totalLives={8} />
         <div className="heart-icon">
           <img src={Heart} />
         </div>

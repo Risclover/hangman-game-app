@@ -7,20 +7,32 @@
   display: flex;
   align-items: center;
   margin-right: 40px;
+  transition: width 0.5s ease-out;
+  overflow: hidden;
 }
 
-.player-life {
-  background: var(--navy);
+.progress-bar {
+  /* appearance: none; */
   height: 13px;
-  width: calc(100% / 8);
+  border-radius: 96px;
+  background-color: white;
+  width: 100%;
+  border-color: transparent;
 }
 
-.player-life:first-child {
-  border-top-left-radius: 96px;
-  border-bottom-left-radius: 96px;
+/* Chrome and Safari */
+.progress-bar::-webkit-progress-bar {
+  background: white;
+  border-radius: 96px;
 }
 
-.player-life:last-child {
-  border-top-right-radius: 96px;
-  border-bottom-right-radius: 96px;
+.progress-bar::-webkit-progress-value {
+  background-color: var(--navy);
+  border-radius: 96px;
+  transition: width 1s;
+}
+
+/* Firefox */
+.progress-bar::-moz-progress-bar {
+  border-radius: 96px;
 }
