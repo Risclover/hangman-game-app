@@ -6,7 +6,7 @@ type Props = {
   content: string;
 };
 
-const HowToPlayStep = ({ number, title, content }: Props) => {
+export const HowToPlayStep = ({ number, title, content }: Props) => {
   return (
     <div className="how-to-play-step-container">
       <h2 className="how-to-play-step-number">{number}</h2>
@@ -15,5 +15,3 @@ const HowToPlayStep = ({ number, title, content }: Props) => {
     </div>
   );
 };
-
-export default HowToPlayStep;

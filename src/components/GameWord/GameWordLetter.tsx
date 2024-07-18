@@ -2,7 +2,7 @@ type Props = {
   value: string;
 };
 
-const GameWordLetter = ({ value }: Props) => {
+export const GameWordLetter = ({ value }: Props) => {
   return (
     <>
       {value !== " " && (
@@ -13,5 +13,3 @@ const GameWordLetter = ({ value }: Props) => {
     </>
   );
 };
-
-export default GameWordLetter;

@@ -1,6 +1,5 @@
 import React, { SetStateAction } from "react";
-import InfoPage from "./InfoPage";
-import Category from "../components/Category/Category";
+import { InfoPageContainer, Category } from "../components";
 import allData from "../../data.json";
 
 type Props = {
@@ -11,9 +10,9 @@ type Props = {
   selectCategory: (category: string) => void;
 };
 
-const CategoriesPage = ({ title, setPage, selectCategory }: Props) => {
+export const CategoriesPage = ({ title, setPage, selectCategory }: Props) => {
   return (
-    <InfoPage title={title} setPage={setPage}>
+    <InfoPageContainer title={title} setPage={setPage}>
       <div className="categories-container">
         {Object.keys(allData.categories).map((category) => (
           <Category
@@ -22,8 +21,6 @@ const CategoriesPage = ({ title, setPage, selectCategory }: Props) => {
           />
         ))}
       </div>
-    </InfoPage>
+    </InfoPageContainer>
   );
 };
-
-export default CategoriesPage;

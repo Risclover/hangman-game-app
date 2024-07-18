@@ -1,12 +1,16 @@
 import React, { PropsWithChildren, SetStateAction } from "react";
-import InfoPageHeader from "../components/InfoPageHeader/InfoPageHeader";
+import { InfoPageHeader } from "../../components";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 
-const InfoPage = ({ children, setPage, title }: PropsWithChildren<Props>) => {
+export const InfoPageContainer = ({
+  children,
+  setPage,
+  title,
+}: PropsWithChildren<Props>) => {
   return (
     <div className="info-page-container">
       <div className="info-page-background"></div>
@@ -17,5 +21,3 @@ const InfoPage = ({ children, setPage, title }: PropsWithChildren<Props>) => {
     </div>
   );
 };
-
-export default InfoPage;

@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import Menu from "/assets/images/icon-menu.svg";
+import { Icons } from "../../assets/images";
 import "./CircleBtn.css";
 
 type Props = {
@@ -7,15 +7,13 @@ type Props = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const CircleBtn = ({ value, onClick }: Props) => {
+export const CircleBtn = ({ value, onClick }: Props) => {
   return (
     <button
-      className={`circle-btn${value === Menu ? " centered" : ""}`}
+      className={`circle-btn${value === Icons.MenuIcon ? " centered" : ""}`}
       onClick={onClick}
     >
       <img src={value} />
     </button>
   );
 };
-
-export default CircleBtn;

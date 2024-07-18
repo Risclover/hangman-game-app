@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import GameBoardLetter from "./GameBoardLetter";
+import { GameBoardLetter } from "./GameBoardLetter";
 import "./GameBoardLetters.css";
 
 type Props = {
@@ -8,7 +8,10 @@ type Props = {
   handleLetterClick: (letter: string) => void;
 };
 
-const GameBoardLetters = ({ handleLetterClick, guessedLetters }: Props) => {
+export const GameBoardLetters = ({
+  handleLetterClick,
+  guessedLetters,
+}: Props) => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   return (
@@ -24,5 +27,3 @@ const GameBoardLetters = ({ handleLetterClick, guessedLetters }: Props) => {
     </div>
   );
 };
-
-export default GameBoardLetters;

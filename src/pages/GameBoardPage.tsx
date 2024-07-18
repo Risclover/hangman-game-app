@@ -1,7 +1,5 @@
 import React, { SetStateAction, useEffect } from "react";
-import GameBoardPageHeader from "../components/GameBoardPageHeader/GameBoardPageHeader";
-import GameBoardLetters from "../components/GameBoardLetters/GameBoardLetters";
-import GameWord from "../components/GameWord/GameWord";
+import { GameBoardPageHeader, GameBoardLetters, GameWord } from "../components";
 
 type Props = {
   category: string | null;
@@ -18,7 +16,7 @@ type Props = {
   setLives: React.Dispatch<SetStateAction<number>>;
 };
 
-const GameBoardPage = ({
+export const GameBoardPage = ({
   category,
   lives,
   setLives,
@@ -70,5 +68,3 @@ const GameBoardPage = ({
     </div>
   );
 };
-
-export default GameBoardPage;

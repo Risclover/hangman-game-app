@@ -6,12 +6,10 @@ type Props = {
   onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const Category = ({ category, onClick }: Props) => {
+export const Category = ({ category, onClick }: Props) => {
   return (
     <button className="category-container" onClick={onClick}>
       {category}
     </button>
   );
 };
-
-export default Category;

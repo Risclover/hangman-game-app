@@ -5,13 +5,11 @@ type Props = {
   lives: number;
 };
 
-const PlayerLivesMeter = ({ lives }: Props) => {
+export const PlayerLivesMeter = ({ lives }: Props) => {
   const [currentValue, setCurrentValue] = useState(lives);
   const maxValue = 8;
 
   useEffect(() => {
-    // This will only update currentValue if lives changes and is different,
-    // avoiding an update loop
     if (currentValue !== lives) {
       setCurrentValue(lives);
     }
@@ -25,5 +23,3 @@ const PlayerLivesMeter = ({ lives }: Props) => {
     </div>
   );
 };
-
-export default PlayerLivesMeter;

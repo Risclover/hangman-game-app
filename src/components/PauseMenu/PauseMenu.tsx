@@ -1,5 +1,5 @@
 import FocusTrap from "focus-trap-react";
-import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
+import { PrimaryBtn } from "../../components";
 import "./PauseMenu.css";
 
 type Props = {
@@ -8,16 +8,9 @@ type Props = {
   setPage: (value: number) => void;
   resetGame: () => void;
   handleStartGame: (categoryName: string, word: string) => void;
-  handlePlayAgain: () => void;
 };
 
-const PauseMenu = ({
-  setPage,
-  title,
-  setShow,
-  resetGame,
-  handlePlayAgain,
-}: Props) => {
+export const PauseMenu = ({ setPage, title, setShow, resetGame }: Props) => {
   const handleNewCategory = () => {
     resetGame();
     setShow(false);
@@ -66,5 +59,3 @@ const PauseMenu = ({
     </FocusTrap>
   );
 };
-
-export default PauseMenu;

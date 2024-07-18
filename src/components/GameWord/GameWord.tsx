@@ -1,5 +1,5 @@
-import formatDisplayWord from "../../utils/formatDisplayWord";
-import GameWordLetter from "./GameWordLetter";
+import { GameWordLetter } from "./GameWordLetter";
+import { formatDisplayWord } from "../../utils";
 import "./GameWord.css";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   guessedLetters: string[];
 };
 
-const GameWord = ({ displayWord, guessedLetters }: Props) => {
+export const GameWord = ({ displayWord, guessedLetters }: Props) => {
   const formattedWordLines: string[] = formatDisplayWord(
     displayWord.toLowerCase()
   );
@@ -45,5 +45,3 @@ const GameWord = ({ displayWord, guessedLetters }: Props) => {
     </div>
   );
 };
-
-export default GameWord;

@@ -3,8 +3,6 @@ type Props = {
   className?: string;
 };
 
-const PlayerLife = ({ className = "" }: Props) => {
+export const PlayerLife = ({ className = "" }: Props) => {
   return <div className={`player-life ${className}`}></div>;
 };
-
-export default PlayerLife;

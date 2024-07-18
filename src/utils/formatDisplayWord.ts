@@ -1,4 +1,4 @@
-export default function formatDisplayWord(gameWord: string): string[] {
+export function formatDisplayWord(gameWord: string): string[] {
   const words = gameWord.split(" ");
   const lines: string[] = [];
   let currentLine = "";

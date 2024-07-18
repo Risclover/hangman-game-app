@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   letter: string;
@@ -6,11 +6,11 @@ interface Props {
   guessedLetters: string[];
 }
 
-const GameBoardLetter: FC<Props> = ({
+export const GameBoardLetter = ({
   letter,
   handleLetterClick,
   guessedLetters,
-}) => {
+}: Props) => {
   const [disabled, setDisabled] = useState(false);
 
   const handleGuess = () => {
@@ -35,5 +35,3 @@ const GameBoardLetter: FC<Props> = ({
     </button>
   );
 };
-
-export default GameBoardLetter;

@@ -1,13 +1,12 @@
 import React, { SetStateAction } from "react";
-import HowToPlayStep from "../components/HowToPlayStep/HowToPlayStep";
-import InfoPage from "./InfoPage";
+import { HowToPlayStep, InfoPageContainer } from "../components";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 
-const HowToPlayPage = ({ setPage, title }: Props) => {
+export const HowToPlayPage = ({ setPage, title }: Props) => {
   const steps = [
     {
       number: "01",
@@ -29,7 +28,7 @@ const HowToPlayPage = ({ setPage, title }: Props) => {
     },
   ];
   return (
-    <InfoPage setPage={setPage} title={title}>
+    <InfoPageContainer setPage={setPage} title={title}>
       <div className="how-to-play-steps">
         {steps.map((step) => (
           <HowToPlayStep
@@ -39,8 +38,6 @@ const HowToPlayPage = ({ setPage, title }: Props) => {
           />
         ))}
       </div>
-    </InfoPage>
+    </InfoPageContainer>
   );
 };
-
-export default HowToPlayPage;

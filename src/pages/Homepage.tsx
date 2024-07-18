@@ -1,7 +1,6 @@
 import React, { SetStateAction } from "react";
-import PrimaryBtn from "../components/PrimaryBtn/PrimaryBtn";
-import Logo from "/assets/images/logo.svg";
-import PlayIcon from "/assets/images/icon-play.svg";
+import { PrimaryBtn } from "../components";
+import { Icons } from "../assets/images";
 import "../assets/Homepage.css";
 
 type Props = {
@@ -10,7 +9,7 @@ type Props = {
   setLogoLoaded: React.Dispatch<SetStateAction<boolean>>;
 };
 
-const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
+export const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
   const handlePlay = (e: any) => {
     e.preventDefault();
     setPage(2);
@@ -25,13 +24,13 @@ const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
     <div className="homepage-container">
       <div className="homepage-main">
         <div className="hangman-logo">
-          <img src={Logo} onLoad={() => setLogoLoaded(true)} />
+          <img src={Icons.Logo} onLoad={() => setLogoLoaded(true)} />
         </div>
         <div className="homepage-main-box">
           <div className="homepage-main-box-background"></div>
           <div className="homepage-main-box-foreground">
             <button className="play-button" onClick={handlePlay}>
-              <img onLoad={() => setImgLoaded(true)} src={PlayIcon} />
+              <img onLoad={() => setImgLoaded(true)} src={Icons.PlayIcon} />
             </button>
             <PrimaryBtn onClick={handleClick} value="How to Play" />
           </div>
@@ -40,5 +39,3 @@ const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
     </div>
   );
 };
-
-export default Homepage;

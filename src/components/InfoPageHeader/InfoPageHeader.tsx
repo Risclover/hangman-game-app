@@ -1,21 +1,18 @@
 import React, { SetStateAction } from "react";
-import InfoPageTitle from "./InfoPageTitle";
-import BackBtnIcon from "/assets/images/icon-back.svg";
-import CircleBtn from "../CircleBtn/CircleBtn";
+import { CircleBtn, InfoPageTitle } from "../../components";
+import { Icons } from "../../assets/images";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
   title: string;
 };
 
-const InfoPageHeader = ({ setPage, title }: Props) => {
+export const InfoPageHeader = ({ setPage, title }: Props) => {
   return (
     <div className="info-page-header">
-      <CircleBtn onClick={() => setPage(0)} value={BackBtnIcon} />
+      <CircleBtn onClick={() => setPage(0)} value={Icons.BackIcon} />
       <InfoPageTitle title={title} />
       <div></div>
     </div>
   );
 };
-
-export default InfoPageHeader;
