@@ -16,7 +16,6 @@ type Props = {
   setShowLose: React.Dispatch<SetStateAction<boolean>>;
   lives: number;
   setLives: React.Dispatch<SetStateAction<number>>;
-  letterBtnRef: Ref<HTMLButtonElement>;
 };
 
 const GameBoardPage = ({
@@ -29,7 +28,6 @@ const GameBoardPage = ({
   setShowPauseMenu,
   gameWord,
   setShowWin,
-  letterBtnRef,
 }: Props) => {
   useEffect(() => {
     let currentWord = gameWord

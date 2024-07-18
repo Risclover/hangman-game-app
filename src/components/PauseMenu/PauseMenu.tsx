@@ -1,7 +1,6 @@
 import "./PauseMenu.css";
 import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 import FocusTrap from "focus-trap-react";
-import { LegacyRef, Ref, useRef } from "react";
 
 type Props = {
   title: string;
@@ -10,7 +9,6 @@ type Props = {
   resetGame: () => void;
   handleStartGame: (categoryName: string, word: string) => void;
   handlePlayAgain: () => void;
-  letterBtnRef: Ref<HTMLButtonElement>;
 };
 
 const PauseMenu = ({
@@ -18,9 +16,7 @@ const PauseMenu = ({
   title,
   setShow,
   resetGame,
-  handleStartGame,
   handlePlayAgain,
-  letterBtnRef,
 }: Props) => {
   const handleNewCategory = () => {
     resetGame();
