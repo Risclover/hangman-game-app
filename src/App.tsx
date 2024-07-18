@@ -6,6 +6,22 @@ import GameBoardPage from "./pages/GameBoardPage";
 import PauseMenu from "./components/PauseMenu/PauseMenu";
 import "./App.css";
 import "./assets/variables.css";
+import allData from "../data.json";
+
+interface CategoryItem {
+  name: string;
+  selected: boolean;
+}
+
+interface Categories {
+  [key: string]: CategoryItem[]; // Index signature
+}
+
+interface Data {
+  categories: Categories;
+}
+
+const data: Data = allData as Data;
 
 function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
@@ -19,6 +35,8 @@ function App() {
     (imgLoaded && logoLoaded) || false
   );
   const [showPauseMenu, setShowPauseMenu] = useState(false);
+  const [showWin, setShowWin] = useState(false);
+  const [showLose, setShowLose] = useState(false);
 
   const resetGame = () => {
     setCategory("");
@@ -37,6 +55,19 @@ function App() {
     setGameWord(word);
   };
 
+  const selectCategory = (category: string) => {
+    setCategory(category);
+    const items = data.categories[category];
+    const item = items[Math.floor(Math.random() * items.length)];
+    handleStartGame(category, item.name);
+    setPage(3);
+  };
+
+  const handlePlayAgain = () => {
+    setGuessedLetters([]);
+    selectCategory(category);
+  };
+
   const pages = [
     <Homepage
       setImgLoaded={setImgLoaded}
@@ -49,6 +80,7 @@ function App() {
       title="Pick a Category"
       setCategory={setCategory}
       handleStartGame={handleStartGame}
+      selectCategory={selectCategory}
     />,
     <GameBoardPage
       category={category}
@@ -59,6 +91,8 @@ function App() {
       handleStartGame={handleStartGame}
       gameWord={gameWord}
       setShowPauseMenu={setShowPauseMenu}
+      setShowWin={setShowWin}
+      setShowLose={setShowLose}
     />,
   ];
 
@@ -70,19 +104,28 @@ function App() {
     handleLoad();
   }, []);
 
-  console.log("isLoaded:", isLoaded);
+  const pauseMenus = [
+    { show: showPauseMenu, title: "Paused", setShow: setShowPauseMenu },
+    { show: showWin, title: "You Win", setShow: setShowWin },
+    { show: showLose, title: "You Lose", setShow: setShowLose },
+  ];
 
   return (
     <div className="main-container">
       {!isLoaded && <div className="spinner"></div>}
       {isLoaded && pages.map((item, idx) => page === idx && item)}
-      {showPauseMenu && (
-        <PauseMenu
-          setPage={setPage}
-          title="Paused"
-          setShowPauseMenu={setShowPauseMenu}
-          resetGame={resetGame}
-        />
+      {pauseMenus.map(
+        (menu) =>
+          menu.show && (
+            <PauseMenu
+              setPage={setPage}
+              title={menu.title}
+              setShow={menu.setShow}
+              resetGame={resetGame}
+              handleStartGame={handleStartGame}
+              handlePlayAgain={handlePlayAgain}
+            />
+          )
       )}
     </div>
   );

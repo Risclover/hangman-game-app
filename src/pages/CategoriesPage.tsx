@@ -3,42 +3,15 @@ import InfoPage from "./InfoPage";
 import Category from "../components/Category/Category";
 import allData from "../../data.json";
 
-interface CategoryItem {
-  name: string;
-  selected: boolean;
-}
-
-interface Categories {
-  [key: string]: CategoryItem[]; // Index signature
-}
-
-interface Data {
-  categories: Categories;
-}
-
-const data: Data = allData as Data;
-
 type Props = {
   title: string;
   setPage: React.Dispatch<SetStateAction<number>>;
   setCategory: React.Dispatch<SetStateAction<string>>;
   handleStartGame: (categoryName: string, word: string) => void;
+  selectCategory: (category: string) => void;
 };
 
-const CategoriesPage = ({
-  title,
-  setPage,
-  setCategory,
-  handleStartGame,
-}: Props) => {
-  const selectCategory = (category: string) => {
-    setCategory(category);
-    const items = data.categories[category];
-    const item = items[Math.floor(Math.random() * items.length)];
-    handleStartGame(category, item.name);
-    setPage((prev) => prev + 1);
-  };
-
+const CategoriesPage = ({ title, setPage, selectCategory }: Props) => {
   return (
     <InfoPage title={title} setPage={setPage}>
       <div className="categories-container">

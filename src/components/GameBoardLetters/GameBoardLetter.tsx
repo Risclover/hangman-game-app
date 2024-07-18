@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   letter: string;
   handleLetterClick: (letter: string) => void;
+  guessedLetters: string[];
 };
 
-const GameBoardLetter = ({ letter, handleLetterClick }: Props) => {
+const GameBoardLetter = ({
+  letter,
+  handleLetterClick,
+  guessedLetters,
+}: Props) => {
   const [disabled, setDisabled] = useState(false);
 
   const handleGuess = () => {
-    setDisabled(true);
     handleLetterClick(letter);
   };
+
+  useEffect(() => {
+    if (guessedLetters.includes(letter)) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [guessedLetters]);
 
   return (
     <button

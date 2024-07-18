@@ -72,10 +72,7 @@
 }
 
 .pause-menu-title-container {
-  position: absolute;
-  top: -90px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: -100px;
   z-index: 10;
 }
 
@@ -95,5 +92,5 @@
   justify-content: center;
   gap: 34px;
   height: 100%;
-  margin-top: 38px;
+  margin-top: -20px;
 }

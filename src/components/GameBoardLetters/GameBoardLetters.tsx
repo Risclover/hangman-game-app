@@ -8,13 +8,14 @@ type Props = {
   handleLetterClick: (letter: string) => void;
 };
 
-const GameBoardLetters = ({ handleLetterClick }: Props) => {
+const GameBoardLetters = ({ handleLetterClick, guessedLetters }: Props) => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   return (
     <div className="game-board-letters-container">
       {Array.from(alphabet).map((letter) => (
         <GameBoardLetter
+          guessedLetters={guessedLetters}
           key={letter}
           letter={letter}
           handleLetterClick={handleLetterClick}

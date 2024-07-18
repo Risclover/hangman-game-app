@@ -3,22 +3,32 @@ import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 
 type Props = {
   title: string;
-  setShowPauseMenu: (value: boolean) => void;
+  setShow: (value: boolean) => void;
   setPage: (value: number) => void;
   resetGame: () => void;
+  handleStartGame: (categoryName: string, word: string) => void;
+  handlePlayAgain: () => void;
 };
 
-const PauseMenu = ({ setPage, title, setShowPauseMenu, resetGame }: Props) => {
+const PauseMenu = ({
+  setPage,
+  title,
+  setShow,
+  resetGame,
+  handleStartGame,
+  handlePlayAgain,
+}: Props) => {
   const handleNewCategory = () => {
     resetGame();
-    setShowPauseMenu(false);
+    setShow(false);
   };
 
   const handleQuitGame = () => {
     resetGame();
     setPage(0);
-    setShowPauseMenu(false);
+    setShow(false);
   };
+
   return (
     <div className="pause-menu">
       <div className="pause-menu-background"></div>
@@ -33,7 +43,12 @@ const PauseMenu = ({ setPage, title, setShowPauseMenu, resetGame }: Props) => {
             <div className="pause-menu-btns">
               <PrimaryBtn
                 value={title === "Paused" ? "Continue" : "Play Again!"}
-                onClick={() => setShowPauseMenu(false)}
+                onClick={() => {
+                  setShow(false);
+                  if (title !== "Paused") {
+                    handlePlayAgain();
+                  }
+                }}
               />
               <PrimaryBtn value="New Category" onClick={handleNewCategory} />
               <button

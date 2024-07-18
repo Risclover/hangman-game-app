@@ -18,6 +18,8 @@
   font-weight: 100;
   text-transform: uppercase;
   cursor: default;
+  background-clip: content-box;
+  padding: 1px;
 }
 
 .game-board-letter.blank {
