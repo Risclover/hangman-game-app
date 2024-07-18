@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { Icons } from "../../assets/images";
+import MenuIcon from "/assets/images/icon-menu.svg";
 import "./CircleBtn.css";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 export const CircleBtn = ({ value, onClick }: Props) => {
   return (
     <button
-      className={`circle-btn${value === Icons.MenuIcon ? " centered" : ""}`}
+      className={`circle-btn${value === MenuIcon ? " centered" : ""}`}
       onClick={onClick}
     >
       <img src={value} />

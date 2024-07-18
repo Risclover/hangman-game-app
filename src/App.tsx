@@ -9,8 +9,17 @@ import { PauseMenu } from "./components";
 import { useGame } from "./hooks/useGame";
 import "./assets/styles/variables.css";
 import "./App.css";
+import FocusTrap from "focus-trap-react";
 
 function App() {
+  const [page, setPage] = useState(0);
+  const [logoLoaded, setLogoLoaded] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const isLoaded = imgLoaded && logoLoaded;
+
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+  };
   const {
     guessedLetters,
     setGuessedLetters,
@@ -28,12 +37,7 @@ function App() {
     resetGame,
     handleStartGame,
     selectCategory,
-  } = useGame();
-
-  const [page, setPage] = useState(0);
-  const [logoLoaded, setLogoLoaded] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
-  const isLoaded = imgLoaded && logoLoaded;
+  } = useGame(handlePageChange);
 
   const pages = [
     <Homepage
@@ -73,8 +77,8 @@ function App() {
 
   return (
     <div className="main-container">
-      {!isLoaded && <div className="spinner"></div>}
-      {isLoaded && pages.map((item, idx) => page === idx && item)}
+      {/* {!isLoaded && <div className="spinner"></div>} */}
+      {pages.map((item, idx) => page === idx && item)}
       {[
         { show: showPauseMenu, title: "Paused", setShow: setShowPauseMenu },
         { show: showWin, title: "You Win", setShow: setShowWin },

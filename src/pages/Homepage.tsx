@@ -1,7 +1,8 @@
 import React, { SetStateAction } from "react";
 import { PrimaryBtn } from "../components";
-import { Icons } from "../assets/images";
-import "../assets/Homepage.css";
+import PlayIcon from "/assets/images/icon-play.svg";
+import Logo from "/assets/images/logo.svg";
+import "../assets/styles/Homepage.css";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
@@ -24,13 +25,13 @@ export const Homepage = ({ setPage, setImgLoaded, setLogoLoaded }: Props) => {
     <div className="homepage-container">
       <div className="homepage-main">
         <div className="hangman-logo">
-          <img src={Icons.Logo} onLoad={() => setLogoLoaded(true)} />
+          <img src={Logo} onLoad={() => setLogoLoaded(true)} />
         </div>
         <div className="homepage-main-box">
           <div className="homepage-main-box-background"></div>
           <div className="homepage-main-box-foreground">
             <button className="play-button" onClick={handlePlay}>
-              <img onLoad={() => setImgLoaded(true)} src={Icons.PlayIcon} />
+              <img onLoad={() => setImgLoaded(true)} src={PlayIcon} />
             </button>
             <PrimaryBtn onClick={handleClick} value="How to Play" />
           </div>

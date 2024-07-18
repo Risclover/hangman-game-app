@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import allData from "../../data.json";
 
-export const useGame = () => {
+export const useGame = (handlePageChange: (newPage: number) => void) => {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [gameWord, setGameWord] = useState("");
   const [category, setCategory] = useState("");
@@ -16,12 +16,17 @@ export const useGame = () => {
   };
 
   const resetGame = () => {
-    setCategory("");
     setGuessedLetters([]);
     setGameWord("");
     setLives(8);
     setShowWin(false);
     setShowLose(false);
+
+    if (category) {
+      selectCategory(category);
+    } else {
+      handlePageChange(2);
+    }
   };
 
   const handleStartGame = (categoryName: string, word: string) => {
@@ -36,6 +41,7 @@ export const useGame = () => {
     const items = data.categories[category];
     const item = items[Math.floor(Math.random() * items.length)];
     handleStartGame(category, item.name);
+    handlePageChange(3);
   };
 
   useEffect(() => {

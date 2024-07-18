@@ -23,7 +23,7 @@ export const PauseMenu = ({ setPage, title, setShow, resetGame }: Props) => {
   };
 
   return (
-    <FocusTrap>
+    <FocusTrap focusTrapOptions={{ initialFocus: false }}>
       <div className="pause-menu">
         <div className="pause-menu-background"></div>
         <div className="pause-menu-foreground">
@@ -39,7 +39,6 @@ export const PauseMenu = ({ setPage, title, setShow, resetGame }: Props) => {
                   value={title === "Paused" ? "Continue" : "Play Again!"}
                   onClick={() => {
                     if (title !== "Paused") {
-                      handlePlayAgain();
                     }
                     setShow(false);
                   }}
