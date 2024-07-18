@@ -21,17 +21,14 @@ type Props = {
 
 const GameBoardPage = ({
   category,
-  setPage,
   lives,
   setLives,
   guessedLetters,
   setGuessedLetters,
   resetGame,
-  handleStartGame,
   setShowPauseMenu,
   gameWord,
   setShowWin,
-  setShowLose,
   letterBtnRef,
 }: Props) => {
   useEffect(() => {
@@ -70,7 +67,6 @@ const GameBoardPage = ({
           guessedLetters={guessedLetters}
           setGuessedLetters={setGuessedLetters}
           handleLetterClick={handleLetterClick}
-          letterBtnRef={letterBtnRef}
         />
       </div>
     </div>
