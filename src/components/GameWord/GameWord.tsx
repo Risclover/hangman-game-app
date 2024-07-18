@@ -31,8 +31,6 @@ const GameWord = ({ displayWord, guessedLetters }: Props) => {
     return formattedLine;
   });
 
-  console.log("word:", word);
-
   return (
     <div className="game-board">
       {word.map((line) => (

@@ -37,6 +37,7 @@ function App() {
   const [showPauseMenu, setShowPauseMenu] = useState(false);
   const [showWin, setShowWin] = useState(false);
   const [showLose, setShowLose] = useState(false);
+  const [lives, setLives] = useState(8);
 
   const resetGame = () => {
     setCategory("");
@@ -53,6 +54,7 @@ function App() {
     }
     setCategory(categoryName);
     setGameWord(word);
+    setLives(8);
   };
 
   const selectCategory = (category: string) => {
@@ -67,6 +69,20 @@ function App() {
     setGuessedLetters([]);
     selectCategory(category);
   };
+
+  useEffect(() => {
+    if (lives === 0) {
+      setShowLose(true);
+    }
+  }, [lives]);
+
+  useEffect(() => {
+    console.log("lives:", lives);
+    console.log("gameWord:", gameWord);
+    console.log("showWin:", showWin);
+    console.log("showLose:", showLose);
+    console.log("category:", category);
+  }, [gameWord, category, lives]);
 
   const pages = [
     <Homepage
@@ -93,6 +109,8 @@ function App() {
       setShowPauseMenu={setShowPauseMenu}
       setShowWin={setShowWin}
       setShowLose={setShowLose}
+      lives={lives}
+      setLives={setLives}
     />,
   ];
 
@@ -109,6 +127,10 @@ function App() {
     { show: showWin, title: "You Win", setShow: setShowWin },
     { show: showLose, title: "You Lose", setShow: setShowLose },
   ];
+
+  useEffect(() => {
+    console.log("showLose:", showLose);
+  }, [showLose]);
 
   return (
     <div className="main-container">

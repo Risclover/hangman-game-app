@@ -19,6 +19,7 @@
   font-family: "MouseMemoirs-Regular", sans-serif;
 }
 
-.category-container:hover {
+.category-container:hover,
+.category-container:focus {
   background: #84a7ff;
 }

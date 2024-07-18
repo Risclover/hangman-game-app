@@ -81,7 +81,8 @@
   background: linear-gradient(#fe71fe 0%, #7199ff 100%);
 }
 
-.pause-menu-quit-btn:hover {
+.pause-menu-quit-btn:hover,
+.pause-menu-quit-btn:focus {
   background: linear-gradient(#ff95ff 0%, #a4aeff 100%);
 }
 

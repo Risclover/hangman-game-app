@@ -32,7 +32,8 @@
   opacity: 0.25;
 }
 
-.game-board-letter-container:hover {
+.game-board-letter-container:hover,
+.game-board-letter-container:focus {
   background: var(--blue);
   color: white;
 }

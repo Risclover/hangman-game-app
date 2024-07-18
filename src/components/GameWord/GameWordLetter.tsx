@@ -3,7 +3,6 @@ type Props = {
 };
 
 const GameWordLetter = ({ value }: Props) => {
-  console.log("value:", value);
   return (
     <>
       {value !== " " && (

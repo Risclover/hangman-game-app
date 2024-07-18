@@ -18,7 +18,8 @@
   width: 41px;
 }
 
-.circle-btn:hover {
+.circle-btn:hover,
+.circle-btn:focus {
   background: var(--pink-gradient-hover);
 }
 

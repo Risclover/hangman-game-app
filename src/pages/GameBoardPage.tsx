@@ -16,11 +16,15 @@ type Props = {
   setShowPauseMenu: React.Dispatch<SetStateAction<boolean>>;
   setShowWin: React.Dispatch<SetStateAction<boolean>>;
   setShowLose: React.Dispatch<SetStateAction<boolean>>;
+  lives: number;
+  setLives: React.Dispatch<SetStateAction<number>>;
 };
 
 const GameBoardPage = ({
   category,
   setPage,
+  lives,
+  setLives,
   guessedLetters,
   setGuessedLetters,
   resetGame,
@@ -30,29 +34,17 @@ const GameBoardPage = ({
   setShowWin,
   setShowLose,
 }: Props) => {
-  const [lives, setLives] = useState(8);
-
   useEffect(() => {
-    console.log("Game word:", gameWord);
-  }, [gameWord]);
-
-  useEffect(() => {
-    if (lives === 0) {
-      setShowLose(true);
-    }
-
     let currentWord = gameWord
       .toLowerCase()
       .split("")
       .map((letter) => (guessedLetters.includes(letter) ? letter : "_"))
       .join("");
 
-    console.log("CURRENT WORD:", currentWord);
-
     if (!currentWord.includes("_")) {
       setShowWin(true);
     }
-  }, [lives, guessedLetters, gameWord, resetGame]);
+  }, [guessedLetters, gameWord, resetGame]);
 
   const handleLetterClick = (letter: string) => {
     if (!guessedLetters.includes(letter)) {
@@ -63,10 +55,6 @@ const GameBoardPage = ({
       }
     }
   };
-
-  useEffect(() => {
-    console.log(guessedLetters);
-  });
 
   return (
     <div className="game-board-page-container">

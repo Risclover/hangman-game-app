@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PlayerLivesMeter.css";
 
 type Props = {
@@ -7,23 +7,20 @@ type Props = {
 
 const PlayerLivesMeter = ({ lives }: Props) => {
   const [currentValue, setCurrentValue] = useState(lives);
-
   const maxValue = 8;
 
-  const decrement = useCallback(() => {
-    setCurrentValue((v) => v - 1);
-  }, [setCurrentValue]);
-
   useEffect(() => {
+    // This will only update currentValue if lives changes and is different,
+    // avoiding an update loop
     if (currentValue !== lives) {
-      decrement();
+      setCurrentValue(lives);
     }
-  }, [lives, decrement, currentValue]);
+  }, [lives, currentValue]);
 
   return (
     <div className="player-lives-meter">
       <progress value={currentValue} max={maxValue} className="progress-bar">
-        {currentValue}
+        {currentValue}/{maxValue}
       </progress>
     </div>
   );

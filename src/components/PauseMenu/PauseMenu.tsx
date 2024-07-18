@@ -44,10 +44,10 @@ const PauseMenu = ({
               <PrimaryBtn
                 value={title === "Paused" ? "Continue" : "Play Again!"}
                 onClick={() => {
-                  setShow(false);
                   if (title !== "Paused") {
                     handlePlayAgain();
                   }
+                  setShow(false);
                 }}
               />
               <PrimaryBtn value="New Category" onClick={handleNewCategory} />
