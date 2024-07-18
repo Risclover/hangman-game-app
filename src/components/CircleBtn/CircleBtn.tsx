@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
-import "./CircleBtn.css";
 import Menu from "/assets/images/icon-menu.svg";
+import "./CircleBtn.css";
 
 type Props = {
   value: string;

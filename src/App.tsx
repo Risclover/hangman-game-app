@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Homepage from "./pages/Homepage";
 import HowToPlayPage from "./pages/HowToPlayPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import GameBoardPage from "./pages/GameBoardPage";
 import PauseMenu from "./components/PauseMenu/PauseMenu";
-import "./App.css";
-import "./assets/variables.css";
 import allData from "../data.json";
+import "./assets/variables.css";
+import "./App.css";
 
 interface CategoryItem {
   name: string;
@@ -14,7 +14,7 @@ interface CategoryItem {
 }
 
 interface Categories {
-  [key: string]: CategoryItem[]; // Index signature
+  [key: string]: CategoryItem[];
 }
 
 interface Data {
@@ -75,14 +75,6 @@ function App() {
       setShowLose(true);
     }
   }, [lives]);
-
-  useEffect(() => {
-    console.log("lives:", lives);
-    console.log("gameWord:", gameWord);
-    console.log("showWin:", showWin);
-    console.log("showLose:", showLose);
-    console.log("category:", category);
-  }, [gameWord, category, lives]);
 
   const pages = [
     <Homepage

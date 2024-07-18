@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import formatDisplayWord from "../../utils/formatDisplayWord";
 import GameWordLetter from "./GameWordLetter";
 import "./GameWord.css";
@@ -9,24 +8,21 @@ type Props = {
 };
 
 const GameWord = ({ displayWord, guessedLetters }: Props) => {
-  const letterRef = useRef<any>(null);
-
   const formattedWordLines: string[] = formatDisplayWord(
     displayWord.toLowerCase()
   );
 
-  const word = formattedWordLines.map((line, index) => {
+  const word = formattedWordLines.map((line) => {
     const formattedLine = line
-      .split("") // Split the line into individual characters
+      .split("")
       .map((char) => {
-        // Check if the character is a guessed letter or a space
         if (guessedLetters.includes(char.toLowerCase()) || char === " ") {
-          return char; // Return the character itself if it's guessed or if it's a space
+          return char;
         } else {
-          return "_"; // Otherwise, return an underscore for unguessed letters
+          return "_";
         }
       })
-      .join(""); // Join all characters back into a string
+      .join("");
 
     return formattedLine;
   });

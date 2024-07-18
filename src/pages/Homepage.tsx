@@ -1,10 +1,8 @@
+import React, { SetStateAction } from "react";
+import PrimaryBtn from "../components/PrimaryBtn/PrimaryBtn";
 import Logo from "/assets/images/logo.svg";
 import PlayIcon from "/assets/images/icon-play.svg";
 import "../assets/Homepage.css";
-import React, { SetStateAction } from "react";
-import PrimaryBtn from "../components/PrimaryBtn/PrimaryBtn";
-import CircleBtn from "../components/CircleBtn/CircleBtn";
-import BackIcon from "/assets/images/icon-back.svg";
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;

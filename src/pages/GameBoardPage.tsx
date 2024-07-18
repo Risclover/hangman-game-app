@@ -1,4 +1,4 @@
-import React, { Ref, SetStateAction, useEffect } from "react";
+import React, { SetStateAction, useEffect } from "react";
 import GameBoardPageHeader from "../components/GameBoardPageHeader/GameBoardPageHeader";
 import GameBoardLetters from "../components/GameBoardLetters/GameBoardLetters";
 import GameWord from "../components/GameWord/GameWord";

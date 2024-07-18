@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, SetStateAction } from "react";
+import { MouseEventHandler } from "react";
 import "./PrimaryBtn.css";
 
 type Props = {

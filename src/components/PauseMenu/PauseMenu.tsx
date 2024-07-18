@@ -1,6 +1,6 @@
-import "./PauseMenu.css";
-import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 import FocusTrap from "focus-trap-react";
+import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
+import "./PauseMenu.css";
 
 type Props = {
   title: string;

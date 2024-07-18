@@ -1,10 +1,9 @@
-import Heart from "/assets/images/icon-heart.svg";
-import Menu from "/assets/images/icon-menu.svg";
-import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
-import "./GameBoardPageHeader.css";
 import React, { SetStateAction } from "react";
 import PlayerLivesMeter from "../PlayerLivesMeter/PlayerLivesMeter";
 import CircleBtn from "../CircleBtn/CircleBtn";
+import Heart from "/assets/images/icon-heart.svg";
+import Menu from "/assets/images/icon-menu.svg";
+import "./GameBoardPageHeader.css";
 
 type Props = {
   category: string | null;
@@ -20,7 +19,7 @@ const GameBoardPageHeader = ({ category, lives, setShowPauseMenu }: Props) => {
         <h1 className="category-title">{category}</h1>
       </div>
       <div className="game-board-page-header-right">
-        <PlayerLivesMeter lives={lives} totalLives={8} />
+        <PlayerLivesMeter lives={lives} />
         <div className="heart-icon">
           <img src={Heart} />
         </div>
