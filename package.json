@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "focus-trap": "^7.5.4",
+    "focus-trap-react": "^10.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

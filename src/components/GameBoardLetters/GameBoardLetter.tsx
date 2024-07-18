@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-type Props = {
+interface Props {
   letter: string;
   handleLetterClick: (letter: string) => void;
   guessedLetters: string[];
-};
+}
 
-const GameBoardLetter = ({
+const GameBoardLetter: FC<Props> = ({
   letter,
   handleLetterClick,
   guessedLetters,
-}: Props) => {
+}) => {
   const [disabled, setDisabled] = useState(false);
 
   const handleGuess = () => {

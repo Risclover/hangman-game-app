@@ -1,9 +1,7 @@
-import React, { SetStateAction, useEffect, useRef, useState } from "react";
+import React, { Ref, SetStateAction, useEffect } from "react";
 import GameBoardPageHeader from "../components/GameBoardPageHeader/GameBoardPageHeader";
 import GameBoardLetters from "../components/GameBoardLetters/GameBoardLetters";
-import formatDisplayWord from "../utils/formatDisplayWord";
 import GameWord from "../components/GameWord/GameWord";
-import PauseMenu from "../components/PauseMenu/PauseMenu";
 
 type Props = {
   category: string | null;
@@ -18,6 +16,7 @@ type Props = {
   setShowLose: React.Dispatch<SetStateAction<boolean>>;
   lives: number;
   setLives: React.Dispatch<SetStateAction<number>>;
+  letterBtnRef: Ref<HTMLButtonElement>;
 };
 
 const GameBoardPage = ({
@@ -33,6 +32,7 @@ const GameBoardPage = ({
   gameWord,
   setShowWin,
   setShowLose,
+  letterBtnRef,
 }: Props) => {
   useEffect(() => {
     let currentWord = gameWord
@@ -70,6 +70,7 @@ const GameBoardPage = ({
           guessedLetters={guessedLetters}
           setGuessedLetters={setGuessedLetters}
           handleLetterClick={handleLetterClick}
+          letterBtnRef={letterBtnRef}
         />
       </div>
     </div>

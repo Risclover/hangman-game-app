@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Homepage from "./pages/Homepage";
 import HowToPlayPage from "./pages/HowToPlayPage";
 import CategoriesPage from "./pages/CategoriesPage";
@@ -24,6 +24,7 @@ interface Data {
 const data: Data = allData as Data;
 
 function App() {
+  const letterBtnRef = useRef<HTMLButtonElement>();
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [gameWord, setGameWord] = useState("");
   const [newGameWord, setNewGameWord] = useState("");
@@ -111,6 +112,7 @@ function App() {
       setShowLose={setShowLose}
       lives={lives}
       setLives={setLives}
+      letterBtnRef={letterBtnRef}
     />,
   ];
 
@@ -145,6 +147,7 @@ function App() {
               setShow={menu.setShow}
               resetGame={resetGame}
               handleStartGame={handleStartGame}
+              letterBtnRef={letterBtnRef}
               handlePlayAgain={handlePlayAgain}
             />
           )
