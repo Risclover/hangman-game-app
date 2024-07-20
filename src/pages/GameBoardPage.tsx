@@ -44,7 +44,9 @@ export const GameBoardPage = ({
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      handleLetterClick(e.key);
+      if (e.key.match(/^[a-z]$/i)) {
+        handleLetterClick(e.key);
+      }
     };
 
     document.addEventListener("keydown", handleKeyPress);
