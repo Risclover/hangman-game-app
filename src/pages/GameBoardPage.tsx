@@ -43,7 +43,7 @@ export const GameBoardPage = ({
   };
 
   useEffect(() => {
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       handleLetterClick(e.key);
     };
 
@@ -53,20 +53,6 @@ export const GameBoardPage = ({
       document.removeEventListener("keypress", handleKeyPress);
     };
   });
-
-  useEffect(() => {
-    function handleKeyPress(e) {
-      if (e.key.match(/^[a-z]$/i)) {
-        handleLetterClick(e.key.value);
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
 
   return (
     <div className="game-board-page-container">

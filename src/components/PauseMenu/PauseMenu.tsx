@@ -1,7 +1,7 @@
 import FocusTrap from "focus-trap-react";
 import { PrimaryBtn } from "../../components";
 import "./PauseMenu.css";
-import React, { SetStateAction } from "react";
+import React, { SetStateAction, useEffect } from "react";
 
 type Props = {
   title: string;
@@ -31,6 +31,14 @@ export const PauseMenu = ({
     setPage(0);
     setShow(false);
   };
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShow(false);
+      }
+    };
+  });
 
   return (
     <FocusTrap focusTrapOptions={{ initialFocus: false }}>
