@@ -54,7 +54,7 @@ export const GameBoardPage = ({
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  });
+  }, [handleLetterClick]);
 
   return (
     <div className="game-board-page-container">

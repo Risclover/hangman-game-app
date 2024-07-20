@@ -40,11 +40,36 @@ function App() {
     hintsList,
   } = useGame(handlePageChange);
 
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (page === 3) {
+          if (!showWin && !showLose && !showPauseMenu) {
+            setShowPauseMenu(true);
+          } else {
+            if (showWin || showLose) {
+              resetGame();
+            }
+          }
+        } else if (page === 2 || page === 1) {
+          setPage(0);
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [page, showWin, showLose, showPauseMenu]);
+
   const pages = [
     <Homepage
       setImgLoaded={setImgLoaded}
       setLogoLoaded={setLogoLoaded}
       setPage={setPage}
+      page={page}
     />,
     <HowToPlayPage setPage={setPage} title="How to Play" />,
     <CategoriesPage
@@ -71,7 +96,6 @@ function App() {
       hintsList={hintsList}
     />,
   ];
-  
 
   useEffect(() => {
     if (!isLoaded) {

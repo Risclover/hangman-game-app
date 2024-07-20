@@ -32,6 +32,12 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
     }
   };
 
+  useEffect(() => {
+    console.log("showPauseMenu:", showPauseMenu);
+    console.log("showWin:", showWin);
+    console.log("showLose:", showLose);
+  }, [showPauseMenu, showWin, showLose]);
+
   const handleStartGame = (categoryName: string, word: string) => {
     setCategory(categoryName);
     setGameWord(word);

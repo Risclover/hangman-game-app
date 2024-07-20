@@ -44,7 +44,7 @@ export const PauseMenu = ({
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  });
+  }, []);
 
   return (
     <FocusTrap focusTrapOptions={{ initialFocus: false }}>
