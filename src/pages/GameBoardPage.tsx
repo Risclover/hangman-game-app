@@ -1,5 +1,6 @@
-import React, { SetStateAction, useEffect } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import { GameBoardPageHeader, GameBoardLetters, GameWord } from "../components";
+import ReverseModeHints from "../components/ReverseModeHints/ReverseModeHints";
 
 type Props = {
   category: string | null;
@@ -14,6 +15,8 @@ type Props = {
   setShowLose: React.Dispatch<SetStateAction<boolean>>;
   lives: number;
   setLives: React.Dispatch<SetStateAction<number>>;
+  reverseGameModeActive: boolean;
+  hintsList: string[];
 };
 
 export const GameBoardPage = ({
@@ -26,19 +29,9 @@ export const GameBoardPage = ({
   setShowPauseMenu,
   gameWord,
   setShowWin,
+  reverseGameModeActive,
+  hintsList,
 }: Props) => {
-  useEffect(() => {
-    let currentWord = gameWord
-      .toLowerCase()
-      .split("")
-      .map((letter) => (guessedLetters.includes(letter) ? letter : "_"))
-      .join("");
-
-    if (!currentWord.includes("_")) {
-      setShowWin(true);
-    }
-  }, [guessedLetters, gameWord, resetGame]);
-
   const handleLetterClick = (letter: string) => {
     if (!guessedLetters.includes(letter)) {
       const newGuessedLetters = [...guessedLetters, letter.toLowerCase()];
@@ -49,6 +42,32 @@ export const GameBoardPage = ({
     }
   };
 
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      handleLetterClick(e.key);
+    };
+
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  });
+
+  useEffect(() => {
+    function handleKeyPress(e) {
+      if (e.key.match(/^[a-z]$/i)) {
+        handleLetterClick(e.key.value);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
   return (
     <div className="game-board-page-container">
       <div className="game-board-page-background"></div>
@@ -58,6 +77,7 @@ export const GameBoardPage = ({
           lives={lives}
           setShowPauseMenu={setShowPauseMenu}
         />
+        {reverseGameModeActive && <ReverseModeHints hintsList={hintsList} />}
         <GameWord displayWord={gameWord} guessedLetters={guessedLetters} />
         <GameBoardLetters
           guessedLetters={guessedLetters}

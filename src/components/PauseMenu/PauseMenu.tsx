@@ -1,18 +1,28 @@
 import FocusTrap from "focus-trap-react";
 import { PrimaryBtn } from "../../components";
 import "./PauseMenu.css";
+import React, { SetStateAction } from "react";
 
 type Props = {
   title: string;
   setShow: (value: boolean) => void;
   setPage: (value: number) => void;
+  setCategory: React.Dispatch<SetStateAction<string>>;
   resetGame: () => void;
   handleStartGame: (categoryName: string, word: string) => void;
 };
 
-export const PauseMenu = ({ setPage, title, setShow, resetGame }: Props) => {
+export const PauseMenu = ({
+  setCategory,
+  setPage,
+  title,
+  setShow,
+  resetGame,
+}: Props) => {
   const handleNewCategory = () => {
+    setCategory("");
     resetGame();
+    setPage(2);
     setShow(false);
   };
 
@@ -39,6 +49,7 @@ export const PauseMenu = ({ setPage, title, setShow, resetGame }: Props) => {
                   value={title === "Paused" ? "Continue" : "Play Again!"}
                   onClick={() => {
                     if (title !== "Paused") {
+                      resetGame();
                     }
                     setShow(false);
                   }}

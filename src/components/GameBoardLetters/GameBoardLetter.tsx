@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   letter: string;
@@ -12,8 +12,10 @@ export const GameBoardLetter = ({
   guessedLetters,
 }: Props) => {
   const [disabled, setDisabled] = useState(false);
+  const btnRef = useRef<any>(null);
 
   const handleGuess = () => {
+    btnRef?.current?.blur();
     handleLetterClick(letter);
   };
 
@@ -27,6 +29,7 @@ export const GameBoardLetter = ({
 
   return (
     <button
+      ref={btnRef}
       className="game-board-letter-container"
       onClick={handleGuess}
       disabled={disabled}

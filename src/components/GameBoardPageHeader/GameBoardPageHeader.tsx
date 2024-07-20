@@ -19,7 +19,11 @@ export const GameBoardPageHeader = ({
     <div className="game-board-page-header">
       <div className="game-board-page-header-left">
         <CircleBtn onClick={() => setShowPauseMenu(true)} value={MenuIcon} />
-        <h1 className="category-title">{category}</h1>
+        <h1 className="category-title">
+          {category?.toLowerCase() === "guess the category (reverse)"
+            ? "Guess the Category"
+            : category}
+        </h1>
       </div>
       <div className="game-board-page-header-right">
         <PlayerLivesMeter lives={lives} />

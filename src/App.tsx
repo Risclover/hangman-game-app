@@ -9,7 +9,6 @@ import { PauseMenu } from "./components";
 import { useGame } from "./hooks/useGame";
 import "./assets/styles/variables.css";
 import "./App.css";
-import FocusTrap from "focus-trap-react";
 
 function App() {
   const [page, setPage] = useState(0);
@@ -37,6 +36,8 @@ function App() {
     resetGame,
     handleStartGame,
     selectCategory,
+    reverseGameModeActive,
+    hintsList,
   } = useGame(handlePageChange);
 
   const pages = [
@@ -66,8 +67,11 @@ function App() {
       setShowLose={setShowLose}
       lives={lives}
       setLives={setLives}
+      reverseGameModeActive={reverseGameModeActive}
+      hintsList={hintsList}
     />,
   ];
+  
 
   useEffect(() => {
     if (!isLoaded) {
@@ -92,6 +96,7 @@ function App() {
               setShow={menu.setShow}
               resetGame={resetGame}
               handleStartGame={handleStartGame}
+              setCategory={setCategory}
             />
           )
       )}
