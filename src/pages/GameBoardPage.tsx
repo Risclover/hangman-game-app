@@ -47,10 +47,10 @@ export const GameBoardPage = ({
       handleLetterClick(e.key);
     };
 
-    document.addEventListener("keypress", handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
 
     return () => {
-      document.removeEventListener("keypress", handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress);
     };
   });
 

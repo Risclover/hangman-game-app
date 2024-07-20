@@ -38,6 +38,12 @@ export const PauseMenu = ({
         setShow(false);
       }
     };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
   });
 
   return (
