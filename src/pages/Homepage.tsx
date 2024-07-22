@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useRef } from "react";
+import React, { MouseEvent, SetStateAction, useEffect } from "react";
 import { PrimaryBtn } from "../components";
 import PlayIcon from "/assets/images/icon-play.svg";
 import Logo from "/assets/images/logo.svg";
@@ -17,14 +17,22 @@ export const Homepage = ({
   setLogoLoaded,
   page,
 }: Props) => {
-  const handlePlay = (e: any) => {
-    e.preventDefault();
+  const handlePlay = () => {
     setPage(2);
   };
 
-  const handleClick = (e: any) => {
-    e.preventDefault();
+  const handleClick = () => {
     setPage(1);
+  };
+
+  const onClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    handleClick();
+  };
+
+  const onPlayClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    handlePlay();
   };
 
   useEffect(() => {
@@ -35,7 +43,7 @@ export const Homepage = ({
           activeElement.click();
         } else {
           if (page === 0) {
-            handlePlay(e);
+            handlePlay();
           }
         }
       }
@@ -57,10 +65,10 @@ export const Homepage = ({
         <div className="homepage-main-box">
           <div className="homepage-main-box-background"></div>
           <div className="homepage-main-box-foreground">
-            <button className="play-button" onClick={handlePlay}>
+            <button className="play-button" onClick={onPlayClick}>
               <img onLoad={() => setImgLoaded(true)} src={PlayIcon} />
             </button>
-            <PrimaryBtn onClick={handleClick} value="How to Play" />
+            <PrimaryBtn onClick={onClick} value="How to Play" />
           </div>
         </div>
       </div>
