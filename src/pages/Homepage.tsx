@@ -17,7 +17,6 @@ export const Homepage = ({
   setLogoLoaded,
   page,
 }: Props) => {
-  const btnRef = useRef(null);
   const handlePlay = (e: any) => {
     e.preventDefault();
     setPage(2);
@@ -32,12 +31,9 @@ export const Homepage = ({
     const handleEnter = (e: KeyboardEvent) => {
       if (e.key === "Enter") {
         const activeElement = document.activeElement as HTMLElement;
-        // Check if the active element is a button
         if (activeElement.tagName === "BUTTON") {
-          // If it's a button, perform the click action
           activeElement.click();
         } else {
-          // Handle other cases as needed, for example:
           if (page === 0) {
             handlePlay(e);
           }
@@ -50,7 +46,7 @@ export const Homepage = ({
     return () => {
       document.removeEventListener("keydown", handleEnter);
     };
-  }, [page]); // Including page in the dependency array if needed
+  }, [page]);
 
   return (
     <div className="homepage-container">

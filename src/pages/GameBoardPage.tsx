@@ -1,6 +1,5 @@
 import React, { SetStateAction, useEffect, useState } from "react";
 import { GameBoardPageHeader, GameBoardLetters, GameWord } from "../components";
-import ReverseModeHints from "../components/ReverseModeHints/ReverseModeHints";
 
 type Props = {
   category: string | null;
@@ -15,8 +14,6 @@ type Props = {
   setShowLose: React.Dispatch<SetStateAction<boolean>>;
   lives: number;
   setLives: React.Dispatch<SetStateAction<number>>;
-  reverseGameModeActive: boolean;
-  hintsList: string[];
 };
 
 export const GameBoardPage = ({
@@ -25,12 +22,8 @@ export const GameBoardPage = ({
   setLives,
   guessedLetters,
   setGuessedLetters,
-  resetGame,
   setShowPauseMenu,
   gameWord,
-  setShowWin,
-  reverseGameModeActive,
-  hintsList,
 }: Props) => {
   const handleLetterClick = (letter: string) => {
     if (!guessedLetters.includes(letter)) {
@@ -65,7 +58,6 @@ export const GameBoardPage = ({
           lives={lives}
           setShowPauseMenu={setShowPauseMenu}
         />
-        {reverseGameModeActive && <ReverseModeHints hintsList={hintsList} />}
         <GameWord displayWord={gameWord} guessedLetters={guessedLetters} />
         <GameBoardLetters
           guessedLetters={guessedLetters}

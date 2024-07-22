@@ -36,8 +36,6 @@ function App() {
     resetGame,
     handleStartGame,
     selectCategory,
-    reverseGameModeActive,
-    hintsList,
   } = useGame(handlePageChange);
 
   useEffect(() => {
@@ -92,8 +90,6 @@ function App() {
       setShowLose={setShowLose}
       lives={lives}
       setLives={setLives}
-      reverseGameModeActive={reverseGameModeActive}
-      hintsList={hintsList}
     />,
   ];
 
