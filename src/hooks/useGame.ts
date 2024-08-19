@@ -10,10 +10,13 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
   const [showPauseMenu, setShowPauseMenu] = useState(false);
   const [showWin, setShowWin] = useState(false);
   const [showLose, setShowLose] = useState(false);
+  const [lastSelectedWord, setLastSelectedWord] = useState<string | null>(null);
 
   const data = allData as {
     categories: { [key: string]: { name: string; selected: boolean }[] };
   };
+
+  useEffect(() => {});
 
   const resetGame = () => {
     setGuessedLetters([]);
@@ -39,8 +42,17 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
 
   const selectCategory = (category: string) => {
     const items = data.categories[category];
-    const item = items[Math.floor(Math.random() * items.length)];
-    handleStartGame(category, item.name);
+
+    const availableWords = items.filter(
+      (item) => !item.selected && item.name !== lastSelectedWord
+    );
+
+    const randomIndex = Math.floor(Math.random() * availableWords.length);
+    const selectedItem = availableWords[randomIndex];
+
+    handleStartGame(category, selectedItem.name);
+    setLastSelectedWord(selectedItem.name);
+
     handlePageChange(3);
   };
 
@@ -65,8 +77,24 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
 
     if (gameWord !== "" && !currentWord.includes("_")) {
       setShowWin(true);
+
+      setCategory((prevCategory) => {
+        const updatedItems = data.categories[prevCategory].map((item) =>
+          item.name === gameWord ? { ...item, selected: true } : item
+        );
+
+        console.log("updatedItems:", updatedItems);
+        data.categories[prevCategory] = updatedItems;
+
+        console.log("prevCategory:", prevCategory);
+        console.log(
+          "data.categories[prevCategory]:",
+          data.categories[prevCategory]
+        );
+        return prevCategory;
+      });
     }
-  }, [guessedLetters, gameWord]);
+  }, [guessedLetters, gameWord, data.categories]);
 
   return {
     guessedLetters,
