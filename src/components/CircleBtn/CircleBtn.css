@@ -28,3 +28,39 @@
   padding-top: 0;
   margin-right: 57px;
 }
+
+@media (max-width: 1439px) {
+  .circle-btn {
+    width: 64px;
+    height: 64px;
+    padding-top: 15px;
+    left: 0;
+  }
+
+  .circle-btn img {
+    height: 26px;
+    width: 26px;
+  }
+
+  .circle-btn.centered {
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .circle-btn {
+    width: 40px;
+    height: 40px;
+    padding-top: 9px;
+    display: flex;
+    /* align-items: center; */
+    box-shadow: inset 0px -5px 0px -1px rgba(157, 45, 245, 0.25);
+    justify-content: center;
+    left: 25px;
+  }
+
+  .circle-btn img {
+    width: 17px;
+    height: 16px;
+  }
+}

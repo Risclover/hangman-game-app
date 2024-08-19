@@ -1,8 +1,3 @@
-@font-face {
-  font-family: MouseMemoirs-Regular;
-  src: url("assets/fonts/MouseMemoirs-Regular.ttf");
-}
-
 .info-page-container {
   height: 100%;
   padding: 80px 112px;
@@ -13,7 +8,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: linear-gradient(#1a043a 0%, #15127b 70%, #2b1677 100%);
+  background: var(--blue-gradient);
   opacity: 0.7;
   z-index: -2;
   height: 100%;
@@ -21,6 +16,7 @@
 
 .info-page-foreground {
   z-index: 10;
+  position: relative;
 }
 
 .info-page-header {
@@ -31,14 +27,15 @@
 
 .info-page-title {
   font-size: 136px;
-  background: -webkit-linear-gradient(#67b6ff, #ffffff);
+  background: var(--title-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "MouseMemoirs-Regular", sans-serif;
   position: relative;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   line-height: 120%;
   font-weight: 100;
+  margin-left: -90px;
 }
 
 .info-page-title:after {
@@ -51,14 +48,6 @@
   font-size: 1em;
 }
 
-.how-to-play-steps {
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 32px;
-  vertical-align: top;
-}
-
 .categories-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -68,7 +57,6 @@
 }
 
 .game-board-page-container {
-  height: 100%;
   padding: 60px 112px 78px 112px;
   width: 100%;
   max-width: 1440px;
@@ -79,7 +67,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: linear-gradient(#1a043a 0%, #15127b 70%, #2b1677 100%);
+  background: var(--blue-gradient);
   opacity: 0.7;
   z-index: -2;
   height: 100%;
@@ -193,5 +181,68 @@
 
   100% {
     transform: scaleY(-1) rotate(-135deg);
+  }
+}
+
+@media (max-width: 1439px) {
+  .info-page-header {
+    justify-content: center;
+  }
+
+  .info-page-container {
+    padding: 0 44px;
+    padding-top: 61px;
+  }
+
+  .info-page-title {
+    font-size: 104px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .info-page-title:after {
+    -webkit-text-stroke: 16px rgba(36, 48, 65, 1);
+    text-shadow: none;
+  }
+
+  .categories-container {
+    grid-template-columns: auto auto;
+    gap: 32px;
+    margin-top: 114px;
+  }
+
+  .game-board-page-container {
+    padding: 61px 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-page-header {
+    justify-content: flex-end;
+  }
+
+  .info-page-container {
+    padding: 0;
+    padding-top: 32px;
+    margin-top: 0;
+  }
+  .info-page-title {
+    letter-spacing: 0.05em;
+    font-size: 48px;
+  }
+
+  .info-page-title:after {
+    -webkit-text-stroke: 8px rgba(36, 48, 65, 1);
+    text-shadow: none;
+  }
+
+  .empty-div {
+    display: none;
+  }
+
+  .categories-container {
+    grid-template-columns: auto;
+    gap: 16px;
+    margin-top: 100px;
   }
 }

@@ -32,3 +32,11 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 1439px) {
+  .category-title {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

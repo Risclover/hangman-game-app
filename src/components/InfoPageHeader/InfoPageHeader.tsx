@@ -12,7 +12,7 @@ export const InfoPageHeader = ({ setPage, title }: Props) => {
     <div className="info-page-header">
       <CircleBtn onClick={() => setPage(0)} value={BackIcon} />
       <InfoPageTitle title={title} />
-      <div></div>
+      <div className="empty-div"></div>
     </div>
   );
 };

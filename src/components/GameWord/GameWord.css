@@ -6,7 +6,8 @@
 .game-board-letter {
   background-color: var(--blue);
   border-radius: 40px;
-  box-shadow: inset 0px -2px 0px 3px #140e66, inset 0px 1px 0px 6px #3c74ff;
+  box-shadow: inset 0px -2px 0px 3px var(--dark-blue),
+    inset 0px 1px 0px 6px #3c74ff;
   width: 112px;
   height: 128px;
   display: flex;
@@ -23,7 +24,6 @@
 }
 
 .game-board-letter.blank {
-  color: pink;
   opacity: 0.25;
 }
 
@@ -39,4 +39,25 @@
 
 .space {
   width: 112px;
+}
+
+@media (max-width: 1439px) {
+  .game-board-letter {
+    font-size: 64px;
+    height: 112px;
+    width: 88px;
+    border-radius: 32px;
+  }
+
+  .game-board-line {
+    gap: 12px;
+  }
+
+  .game-board {
+    margin-left: 0;
+  }
+
+  .space {
+    width: 61px;
+  }
 }

@@ -1,8 +1,16 @@
+@font-face {
+  font-family: MouseMemoirs-Regular;
+  src: url("assets/fonts/MouseMemoirs-Regular.ttf");
+}
+
 :root {
   --blue: #2463ff;
   --navy: #261676;
+  --dark-blue: #140e66;
   --light-blue: #5b8aff;
   --dark-grey: #243041;
   --pink-gradient: linear-gradient(#fe71fe 0%, #fe71fe 20%, #7199ff 100%);
   --pink-gradient-hover: linear-gradient(#ff95ff 0%, #ff95ff 20%, #9fb0ff 100%);
+  --blue-gradient: linear-gradient(#1a043a 0%, #15127b 70%, #2b1677 100%);
+  --title-gradient: -webkit-linear-gradient(#67b6ff, #ffffff);
 }

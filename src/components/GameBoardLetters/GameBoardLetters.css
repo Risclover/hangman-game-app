@@ -43,3 +43,14 @@
   background: white;
   color: var(--navy);
 }
+
+@media (max-width: 1439px) {
+  .game-board-letters-container {
+    left: 0;
+    gap: 24px 16px;
+    bottom: calc(114px - 61px);
+  }
+  .game-board-letter-container {
+    width: 64px;
+  }
+}

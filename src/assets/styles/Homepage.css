@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 203px;
   width: 100%;
 }
 
@@ -57,7 +57,8 @@
     rgba(0, 20, 121, 0.83) 100%
   );
   border-radius: 72px;
-  box-shadow: inset 0px -8px 0px 4px #140566, inset 0px 6px 0px 8px var(--blue);
+  box-shadow: inset 0px -8px 0px 4px var(--dark-blue),
+    inset 0px 6px 0px 8px var(--blue);
 }
 
 .homepage-main-box-foreground {
@@ -86,7 +87,13 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1439px) {
+  .homepage-main {
+    padding-top: 207px;
+  }
+}
+
+@media (max-width: 767px) {
   .hangman-logo img {
     width: 263px;
   }
@@ -95,11 +102,19 @@
     width: 100%;
     padding: 0 31px;
     height: 481px;
+    border-radius: 48px;
   }
 
   .play-button {
     width: 160px;
     height: 160px;
+    margin-top: 138px;
+    margin-bottom: 57px;
+  }
+
+  .play-button img {
+    width: 52px;
+    height: 49px;
   }
 
   .homepage-main-box-foreground {
@@ -107,8 +122,17 @@
     width: 100%;
   }
 
+  .homepage-main-box-background {
+    border-radius: 48px;
+  }
+
   .how-to-play {
     max-width: 260px;
     width: 100%;
+  }
+
+  .homepage-main {
+    padding-top: 156px;
+    height: 100%;
   }
 }

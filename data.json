@@ -169,16 +169,16 @@
       { "name": "Death Eater", "selected": false },
       { "name": "Deathly Hallows", "selected": false },
       { "name": "Diagon Alley", "selected": false },
-      { "name": "Dobby is a free elf", "selected": false },
+      { "name": "Yer a wizard Harry", "selected": false },
       { "name": "Elder Wand", "selected": false },
       { "name": "Felix Felicis", "selected": false },
       { "name": "Fred and George", "selected": false },
       { "name": "Floo powder", "selected": false },
       { "name": "Goblet of fire", "selected": false },
-      { "name": "He who must not be named", "selected": false },
+      { "name": "You know who", "selected": false },
       { "name": "Horcrux", "selected": false },
-      { "name": "I am up to no good", "selected": false },
-      { "name": "I must not tell lies", "selected": false },
+      { "name": "Twitchy little ferret", "selected": false },
+      { "name": "Fawkes the phoenix", "selected": false },
       { "name": "I open at the close", "selected": false },
       { "name": "Imperio", "selected": false },
       { "name": "James and Lily", "selected": false },
@@ -191,11 +191,11 @@
       { "name": "The Daily Prophet", "selected": false },
       { "name": "The Golden Trio", "selected": false },
       { "name": "The Sorting Hat", "selected": false },
-      { "name": "The wand chooses the wizard", "selected": false },
+      { "name": "The Golden Trio", "selected": false },
       { "name": "Tom Riddle", "selected": false },
       { "name": "Troll in the dungeon", "selected": false },
       { "name": "Weasley is our King", "selected": false },
-      { "name": "You know who", "selected": false }
+      { "name": "The boy who lived", "selected": false }
     ]
   }
 }

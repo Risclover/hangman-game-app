@@ -1,6 +1,8 @@
 import { GameWordLetter } from "./GameWordLetter";
 import { formatDisplayWord } from "../../utils";
 import "./GameWord.css";
+import { useEffect, useState } from "react";
+import { useScreenSize } from "../../hooks/useScreenSize";
 
 type Props = {
   displayWord: string;
@@ -8,8 +10,11 @@ type Props = {
 };
 
 export const GameWord = ({ displayWord, guessedLetters }: Props) => {
+  const { screenWidth } = useScreenSize();
+
   const formattedWordLines: string[] = formatDisplayWord(
-    displayWord.toLowerCase()
+    displayWord.toLowerCase(),
+    screenWidth >= 1440 ? 10 : 7
   );
 
   const word = formattedWordLines.map((line) => {
