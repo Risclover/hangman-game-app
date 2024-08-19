@@ -131,6 +131,7 @@
     "Movies": [
       { "name": "Back to the Future", "selected": false },
       { "name": "Batman Begins", "selected": false },
+      { "name": "Birds of Prey", "selected": false },
       { "name": "Citizen Kane", "selected": false },
       { "name": "Fight Club", "selected": false },
       { "name": "Forrest Gump", "selected": false },
@@ -150,7 +151,6 @@
       { "name": "Singing in the Rain", "selected": false },
       { "name": "Some Like it Hot", "selected": false },
       { "name": "The Dark Knight", "selected": false },
-      { "name": "The Dark Knight Rises", "selected": false },
       { "name": "The Green Mile", "selected": false },
       { "name": "The Lion King", "selected": false },
       { "name": "The Lord of the Rings", "selected": false },
