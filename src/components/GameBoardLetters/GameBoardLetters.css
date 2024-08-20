@@ -5,9 +5,8 @@
   max-width: 1173px;
   width: 100%;
   margin: 0 auto;
-  position: absolute;
   bottom: 0;
-  left: 29px;
+  margin-left: 29px;
 }
 
 .game-board-letter-container {
@@ -49,8 +48,22 @@
     left: 0;
     gap: 24px 16px;
     bottom: calc(114px - 61px);
+    margin-left: 0;
   }
   .game-board-letter-container {
-    width: 64px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .game-board-letter-container {
+    height: 56px;
+    border-radius: 8px;
+    font-size: 24px;
+  }
+
+  .game-board-letters-container {
+    gap: 24px 8px;
+    position: unset;
   }
 }

@@ -5,12 +5,13 @@
   height: 94px;
   box-shadow: inset 0px -6px 0 7px rgba(157, 45, 245, 0.25);
   padding-top: 22px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   z-index: 10;
   outline: 0;
   border: 0;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .circle-btn img {
@@ -52,11 +53,17 @@
     width: 40px;
     height: 40px;
     padding-top: 9px;
-    display: flex;
     /* align-items: center; */
     box-shadow: inset 0px -5px 0px -1px rgba(157, 45, 245, 0.25);
     justify-content: center;
     left: 25px;
+    margin-right: 16px;
+  }
+
+  .circle-btn.centered {
+    margin-right: 16px;
+    height: 40px;
+    width: 40px;
   }
 
   .circle-btn img {

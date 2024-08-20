@@ -42,3 +42,21 @@
     width: 160px;
   }
 }
+
+@media (max-width: 767px) {
+  .player-lives-meter {
+    width: 57px;
+    height: 16px;
+    padding: 4px;
+    margin-right: 16px;
+  }
+
+  .progress-bar {
+    height: 8px;
+  }
+
+  .heart-icon img {
+    height: 24px;
+    width: 26px;
+  }
+}

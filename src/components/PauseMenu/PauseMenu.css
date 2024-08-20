@@ -1,5 +1,6 @@
 .pause-menu {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   width: 100vw;
   position: absolute;
   z-index: 20;
@@ -9,7 +10,7 @@
   background: var(--blue-gradient);
   opacity: 0.8;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
 }
 
@@ -96,4 +97,20 @@
   gap: 34px;
   height: 100%;
   margin-top: -20px;
+}
+
+@media (max-width: 767px) {
+  .pause-menu-box {
+    width: 324px;
+    top: 20px;
+    border-radius: 48px;
+  }
+
+  .pause-menu-title {
+    font-size: 94px;
+  }
+
+  .pause-menu-title-container {
+    margin-top: -50px;
+  }
 }

@@ -1,0 +1,1 @@
+export { HowToPlayPage } from "./HowToPlayPage";

@@ -1,5 +1,9 @@
 import React, { SetStateAction, useEffect, useState } from "react";
-import { GameBoardPageHeader, GameBoardLetters, GameWord } from "../components";
+import {
+  GameBoardPageHeader,
+  GameBoardLetters,
+  GameWord,
+} from "../../components";
 
 type Props = {
   category: string | null;

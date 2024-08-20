@@ -94,6 +94,11 @@
 }
 
 @media (max-width: 767px) {
+  .hangman-logo {
+    position: relative;
+    top: -20px;
+    left: 0;
+  }
   .hangman-logo img {
     width: 263px;
   }
@@ -103,6 +108,7 @@
     padding: 0 31px;
     height: 481px;
     border-radius: 48px;
+    top: -100px;
   }
 
   .play-button {
@@ -132,7 +138,7 @@
   }
 
   .homepage-main {
-    padding-top: 156px;
+    padding-top: calc(156px - 32px);
     height: 100%;
   }
 }
