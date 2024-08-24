@@ -83,15 +83,7 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
         const updatedItems = data.categories[prevCategory].map((item) =>
           item.name === gameWord ? { ...item, selected: true } : item
         );
-
-        console.log("updatedItems:", updatedItems);
         data.categories[prevCategory] = updatedItems;
-
-        console.log("prevCategory:", prevCategory);
-        console.log(
-          "data.categories[prevCategory]:",
-          data.categories[prevCategory]
-        );
         return prevCategory;
       });
     }
