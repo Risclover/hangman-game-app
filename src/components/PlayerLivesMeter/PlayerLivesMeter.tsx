@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { usePlayerLivesMeter } from "./hooks/usePlayerLivesMeter";
 import "./PlayerLivesMeter.css";
 
 type Props = {
@@ -6,15 +6,7 @@ type Props = {
 };
 
 export const PlayerLivesMeter = ({ lives }: Props) => {
-  const [currentValue, setCurrentValue] = useState(lives);
-  const maxValue = 8;
-
-  useEffect(() => {
-    if (currentValue !== lives) {
-      setCurrentValue(lives);
-    }
-  }, [lives, currentValue]);
-
+  const { currentValue, maxValue } = usePlayerLivesMeter(lives);
   return (
     <div className="player-lives-meter">
       <progress value={currentValue} max={maxValue} className="progress-bar">

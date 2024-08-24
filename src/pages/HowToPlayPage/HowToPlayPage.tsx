@@ -13,6 +13,7 @@ export const HowToPlayPage = ({ setPage, title }: Props) => {
       <div className="how-to-play-steps">
         {steps.map((step) => (
           <HowToPlayStep
+            key={step.number}
             number={step.number}
             title={step.title}
             content={step.content}

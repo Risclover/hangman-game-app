@@ -4,6 +4,7 @@ import {
   GameBoardLetters,
   GameWord,
 } from "../../components";
+import { useGameBoardLogic } from "./hooks/useGameBoardLogic";
 
 type Props = {
   category: string | null;
@@ -23,35 +24,18 @@ type Props = {
 export const GameBoardPage = ({
   category,
   lives,
-  setLives,
-  guessedLetters,
   setGuessedLetters,
   setShowPauseMenu,
   gameWord,
+  guessedLetters,
+  setLives,
 }: Props) => {
-  const handleLetterClick = (letter: string) => {
-    if (!guessedLetters.includes(letter)) {
-      const newGuessedLetters = [...guessedLetters, letter.toLowerCase()];
-      setGuessedLetters(newGuessedLetters);
-      if (!gameWord.toLowerCase().includes(letter)) {
-        setLives((prev) => prev - 1);
-      }
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key.match(/^[a-z]$/i)) {
-        handleLetterClick(e.key);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, [handleLetterClick]);
+  const { handleLetterClick } = useGameBoardLogic(
+    gameWord,
+    guessedLetters,
+    setGuessedLetters,
+    setLives
+  );
 
   return (
     <div className="game-board-page-container">

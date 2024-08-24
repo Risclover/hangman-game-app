@@ -6,6 +6,6 @@ export * from "./GameWord";
 export * from "./HowToPlayStep";
 export * from "./InfoPageContainer";
 export * from "./InfoPageHeader";
-export * from "./PauseMenu";
+export * from "./PauseMenus";
 export * from "./PlayerLivesMeter";
 export * from "./PrimaryBtn";

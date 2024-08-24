@@ -27,6 +27,7 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
 
     if (category) {
       selectCategory(category);
+      handlePageChange(3);
     } else {
       handlePageChange(2);
     }

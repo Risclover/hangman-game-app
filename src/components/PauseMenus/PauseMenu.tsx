@@ -1,7 +1,8 @@
 import FocusTrap from "focus-trap-react";
-import { PrimaryBtn } from "../../components";
+import { PrimaryBtn } from "..";
 import "./PauseMenu.css";
-import React, { SetStateAction, useEffect } from "react";
+import React, { SetStateAction } from "react";
+import { usePauseMenu } from "./hooks/usePauseMenu";
 
 type Props = {
   title: string;
@@ -19,32 +20,12 @@ export const PauseMenu = ({
   setShow,
   resetGame,
 }: Props) => {
-  const handleNewCategory = () => {
-    setCategory("");
-    resetGame();
-    setPage(2);
-    setShow(false);
-  };
-
-  const handleQuitGame = () => {
-    resetGame();
-    setPage(0);
-    setShow(false);
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setShow(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
+  const { handleNewCategory, handleQuitGame } = usePauseMenu(
+    setCategory,
+    setPage,
+    setShow,
+    resetGame
+  );
 
   return (
     <FocusTrap focusTrapOptions={{ initialFocus: false }}>

@@ -1,7 +1,5 @@
-import React, { SetStateAction } from "react";
+import { SetStateAction } from "react";
 import { CircleBtn, PlayerLivesMeter } from "../../components";
-import MenuIcon from "/assets/images/icon-menu.svg";
-import HeartIcon from "/assets/images/icon-heart.svg";
 import "./GameBoardPageHeader.css";
 
 type Props = {
@@ -15,20 +13,19 @@ export const GameBoardPageHeader = ({
   lives,
   setShowPauseMenu,
 }: Props) => {
+  const menuIconUrl = "/assets/images/icon-menu.svg";
+  const heartIconUrl = "/assets/images/icon-heart.svg";
+
   return (
     <div className="game-board-page-header">
       <div className="game-board-page-header-left">
-        <CircleBtn onClick={() => setShowPauseMenu(true)} value={MenuIcon} />
-        <h1 className="category-title">
-          {category?.toLowerCase() === "guess the category (reverse)"
-            ? "Guess the Category"
-            : category}
-        </h1>
+        <CircleBtn onClick={() => setShowPauseMenu(true)} value={menuIconUrl} />
+        <h1 className="category-title">{category}</h1>
       </div>
       <div className="game-board-page-header-right">
         <PlayerLivesMeter lives={lives} />
         <div className="heart-icon">
-          <img src={HeartIcon} />
+          <img src={heartIconUrl} alt="Heart Icon" />
         </div>
       </div>
     </div>

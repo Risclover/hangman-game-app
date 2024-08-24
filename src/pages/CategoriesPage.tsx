@@ -16,6 +16,7 @@ export const CategoriesPage = ({ title, setPage, selectCategory }: Props) => {
       <div className="categories-container">
         {Object.keys(allData.categories).map((category) => (
           <Category
+            key={category}
             onClick={() => selectCategory(category)}
             category={category}
           />

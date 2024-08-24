@@ -1,24 +1,19 @@
-import { useEffect, useState } from "react";
 import {
   Homepage,
   HowToPlayPage,
   CategoriesPage,
   GameBoardPage,
 } from "./pages";
-import { PauseMenu } from "./components";
+import { PauseMenus } from "./components";
 import { useGame } from "./hooks/useGame";
+import { useKeyPressHandler } from "./hooks/useKeyPressHandler";
+import { usePageHandler } from "./hooks/usePageHandler";
 import "./assets/styles/variables.css";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState(0);
-  const [logoLoaded, setLogoLoaded] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
-  const isLoaded = imgLoaded && logoLoaded;
+  const [page, setPage] = usePageHandler(0); // Custom hook for page management
 
-  const handlePageChange = (newPage: number) => {
-    setPage(newPage);
-  };
   const {
     guessedLetters,
     setGuessedLetters,
@@ -36,36 +31,21 @@ function App() {
     resetGame,
     handleStartGame,
     selectCategory,
-  } = useGame(handlePageChange);
+  } = useGame(setPage);
 
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        if (page === 3) {
-          if (!showWin && !showLose && !showPauseMenu) {
-            setShowPauseMenu(true);
-          } else {
-            if (showWin || showLose) {
-              resetGame();
-            }
-          }
-        } else if (page === 2 || page === 1) {
-          setPage(0);
-        }
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, [page, showWin, showLose, showPauseMenu]);
+  // Use custom hook for keypress event handling
+  useKeyPressHandler({
+    page,
+    showWin,
+    showLose,
+    showPauseMenu,
+    setShowPauseMenu,
+    setPage,
+    resetGame,
+  });
 
   const pages = [
     <Homepage
-      setImgLoaded={setImgLoaded}
-      setLogoLoaded={setLogoLoaded}
       setPage={setPage}
       page={page}
     />,
@@ -93,33 +73,21 @@ function App() {
     />,
   ];
 
-  useEffect(() => {
-    if (!isLoaded) {
-      // Additional loading actions if needed
-    }
-  }, [isLoaded]);
-
   return (
     <div className="main-container">
-      {/* {!isLoaded && <div className="spinner"></div>} */}
-      {pages.map((item, idx) => page === idx && item)}
-      {[
-        { show: showPauseMenu, title: "Paused", setShow: setShowPauseMenu },
-        { show: showWin, title: "You Win", setShow: setShowWin },
-        { show: showLose, title: "You Lose", setShow: setShowLose },
-      ].map(
-        (menu) =>
-          menu.show && (
-            <PauseMenu
-              setPage={setPage}
-              title={menu.title}
-              setShow={menu.setShow}
-              resetGame={resetGame}
-              handleStartGame={handleStartGame}
-              setCategory={setCategory}
-            />
-          )
-      )}
+      {pages[page]}
+      <PauseMenus
+        showPauseMenu={showPauseMenu}
+        showWin={showWin}
+        showLose={showLose}
+        setShowPauseMenu={setShowPauseMenu}
+        setShowWin={setShowWin}
+        setShowLose={setShowLose}
+        setPage={setPage}
+        resetGame={resetGame}
+        handleStartGame={handleStartGame}
+        setCategory={setCategory}
+      />
     </div>
   );
 }

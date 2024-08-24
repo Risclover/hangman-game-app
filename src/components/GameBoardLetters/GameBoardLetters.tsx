@@ -1,5 +1,6 @@
-import React, { SetStateAction } from "react";
+import { SetStateAction } from "react";
 import { GameBoardLetter } from "./GameBoardLetter";
+import { alphabet } from "./data/alphabet";
 import "./GameBoardLetters.css";
 
 type Props = {
@@ -12,8 +13,6 @@ export const GameBoardLetters = ({
   handleLetterClick,
   guessedLetters,
 }: Props) => {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
   return (
     <div className="game-board-letters-container">
       {Array.from(alphabet).map((letter) => (
