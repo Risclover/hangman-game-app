@@ -192,6 +192,7 @@
   .info-page-container {
     padding: 0 44px;
     padding-top: 61px;
+    max-width: 768px;
   }
 
   .info-page-title {
@@ -221,6 +222,7 @@
     padding: 0;
     /* padding-top: 32px; */
     margin-top: 0;
+    max-width: 375px;
   }
   .info-page-title {
     letter-spacing: 0.05em;
