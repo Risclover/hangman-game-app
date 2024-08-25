@@ -99,6 +99,12 @@
   margin-top: -20px;
 }
 
+.pause-menu-btns button {
+  padding: 12px 64px;
+  width: auto;
+  max-width: 100%;
+}
+
 @media (max-width: 767px) {
   .pause-menu-box {
     width: 324px;
