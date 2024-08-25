@@ -16,7 +16,7 @@ export const GameBoardPageHeader = ({
   setShowPauseMenu,
 }: Props) => {
   return (
-    <div className="game-board-page-header">
+    <header className="game-board-page-header">
       <div className="game-board-page-header-left">
         <CircleBtn onClick={() => setShowPauseMenu(true)} value={MenuIcon} />
         <h1 className="category-title">{category}</h1>
@@ -27,6 +27,6 @@ export const GameBoardPageHeader = ({
           <img src={HeartIcon} alt="Heart Icon" />
         </div>
       </div>
-    </div>
+    </header>
   );
 };

@@ -9,10 +9,10 @@ type Props = {
 
 export const InfoPageHeader = ({ setPage, title }: Props) => {
   return (
-    <div className="info-page-header">
+    <header className="info-page-header">
       <CircleBtn onClick={() => setPage(0)} value={CircleBtnIcon} />
       <InfoPageTitle title={title} />
       <div className="empty-div"></div>
-    </div>
+    </header>
   );
 };

@@ -29,7 +29,7 @@ export const PauseMenu = ({
 
   return (
     <FocusTrap focusTrapOptions={{ initialFocus: false }}>
-      <div className="pause-menu">
+      <nav className="pause-menu">
         <div className="pause-menu-background"></div>
         <div className="pause-menu-foreground">
           <div className="pause-menu-box">
@@ -58,7 +58,7 @@ export const PauseMenu = ({
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </FocusTrap>
   );
 };

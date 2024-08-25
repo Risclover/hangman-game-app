@@ -44,10 +44,7 @@ function App() {
   });
 
   const pages = [
-    <Homepage
-      setPage={setPage}
-      page={page}
-    />,
+    <Homepage setPage={setPage} page={page} />,
     <HowToPlayPage setPage={setPage} title="How to Play" />,
     <CategoriesPage
       setPage={setPage}
@@ -73,7 +70,7 @@ function App() {
   ];
 
   return (
-    <div className="main-container">
+    <main className="main-container">
       {pages[page]}
       <PauseMenus
         showPauseMenu={showPauseMenu}
@@ -87,7 +84,7 @@ function App() {
         handleStartGame={handleStartGame}
         setCategory={setCategory}
       />
-    </div>
+    </main>
   );
 }
 

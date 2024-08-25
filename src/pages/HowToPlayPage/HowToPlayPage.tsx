@@ -10,7 +10,7 @@ type Props = {
 export const HowToPlayPage = ({ setPage, title }: Props) => {
   return (
     <InfoPageContainer setPage={setPage} title={title}>
-      <div className="how-to-play-steps">
+      <ul className="how-to-play-steps">
         {steps.map((step) => (
           <HowToPlayStep
             key={step.number}
@@ -19,7 +19,7 @@ export const HowToPlayPage = ({ setPage, title }: Props) => {
             content={step.content}
           />
         ))}
-      </div>
+      </ul>
     </InfoPageContainer>
   );
 };
