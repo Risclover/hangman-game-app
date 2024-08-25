@@ -8,7 +8,6 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "include": ["src/**/*", "src/custom.d.ts"], // Make sure this is included
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
@@ -19,10 +18,6 @@
     "esModuleInterop": true,
     "types": ["jest", "node", "@testing-library/jest-dom"],
     "lib": ["dom", "es2016"],
-    "resolveJsonModule": true,
-    "baseUrl": "./src", // or your appropriate base url
-    "paths": {
-      "*.svg": ["./assets/images"]
-    }
-  },
+    "resolveJsonModule": true
+  }
 }
