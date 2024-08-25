@@ -20,6 +20,5 @@
     "types": ["jest", "node", "@testing-library/jest-dom"],
     "lib": ["dom", "es2016"],
     "resolveJsonModule": true
-  },
-  "include": ["src/**/*", "src/custom.d.ts"]
+  }
 }
