@@ -3,6 +3,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { InfoPageHeader } from "./InfoPageHeader";
 import { CircleBtn, InfoPageTitle } from "../../components";
 
+// Mock the SVG
+jest.mock("../../assets/images/icon-back.svg", () => "MockedSVG");
+
 // Mock the CircleBtn and InfoPageTitle components
 jest.mock("../../components", () => ({
   CircleBtn: jest.fn(({ onClick }) => (
@@ -23,7 +26,7 @@ describe("InfoPageHeader", () => {
     expect(CircleBtn).toHaveBeenCalledWith(
       {
         onClick: expect.any(Function),
-        value: "/hangman-game-app/src/assets/images/icon-back.svg",
+        value: "MockedSVG", // The mocked value for the SVG
       },
       {}
     );

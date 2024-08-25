@@ -15,7 +15,7 @@ main {
 
 body {
   margin: 0;
-  background-image: url("/hangman-game-app/src/assets/images/background-desktop.svg");
+  background-image: url("./assets/images/background-desktop.svg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -34,13 +34,13 @@ body {
 
 @media (max-width: 1000px) {
   body {
-    background-image: url("/hangman-game-app/src/assets/images/background-tablet.svg");
+    background-image: url("./assets/images/background-tablet.svg");
   }
 }
 
 @media (max-width: 767px) {
   body {
-    background-image: url("/hangman-game-app/src/assets/images/background-mobile.svg");
+    background-image: url("./assets/images/background-mobile.svg");
   }
 
   .main-container {

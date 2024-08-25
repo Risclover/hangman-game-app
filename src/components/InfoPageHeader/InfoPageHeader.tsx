@@ -1,5 +1,6 @@
 import React, { SetStateAction } from "react";
 import { CircleBtn, InfoPageTitle } from "../../components";
+import CircleBtnIcon from "../../assets/images/icon-back.svg"; // Import the SVG
 
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
@@ -11,7 +12,7 @@ export const InfoPageHeader = ({ setPage, title }: Props) => {
     <div className="info-page-header">
       <CircleBtn
         onClick={() => setPage(0)}
-        value={"/hangman-game-app/src/assets/images/icon-back.svg"}
+        value={CircleBtnIcon} // Use the imported SVG here
       />
       <InfoPageTitle title={title} />
       <div className="empty-div"></div>

@@ -1,6 +1,8 @@
 import React, { SetStateAction } from "react";
 import { PrimaryBtn } from "../../components";
 import "../../assets/styles/Homepage.css";
+import Logo from "../../assets/images/logo.svg";
+import PlayIcon from "../../assets/images/icon-play.svg";
 import { useHomepageLogic } from "./hooks/useHomepageLogic";
 
 type Props = {
@@ -14,16 +16,13 @@ export const Homepage = ({ setPage, page }: Props) => {
     <div className="homepage-container">
       <div className="homepage-main">
         <div className="hangman-logo">
-          <img src="/hangman-game-app/src/assets/images/logo.svg" alt="logo" />
+          <img src={Logo} alt="logo" />
         </div>
         <div className="homepage-main-box">
           <div className="homepage-main-box-background"></div>
           <div className="homepage-main-box-foreground">
             <button className="play-button" onClick={onPlayClick}>
-              <img
-                src="/hangman-game-app/src/assets/images/icon-play.svg"
-                alt="play-icon"
-              />
+              <img src={PlayIcon} alt="play-icon" />
             </button>
             <PrimaryBtn onClick={onClick} value="How to Play" />
           </div>
