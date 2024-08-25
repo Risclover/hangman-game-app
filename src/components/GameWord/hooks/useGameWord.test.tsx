@@ -1,21 +1,19 @@
+import React from "react";
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import { useGameWord } from "./useGameWord";
 import { formatDisplayWord } from "../../../utils";
-import React from "react";
 
 jest.mock("../../../utils", () => ({
   formatDisplayWord: jest.fn(),
 }));
 
-// Define the props for the test component
 interface TestComponentProps {
   screenWidth: number;
   guessedLetters: string[];
   displayWord: string;
 }
 
-// Create a simple test component that uses the useGameWord hook
 const TestComponent: React.FC<TestComponentProps> = ({
   screenWidth,
   guessedLetters,
@@ -46,7 +44,6 @@ describe("useGameWord", () => {
       />
     );
 
-    // Check that the correct letters are displayed
     expect(getByText("wo__")).toBeInTheDocument();
     expect(getByText("t__t")).toBeInTheDocument();
   });
@@ -65,7 +62,6 @@ describe("useGameWord", () => {
       />
     );
 
-    // Verify that formatDisplayWord is called with the right line size
     expect(mockedFormatDisplayWord).toHaveBeenCalledWith("word test", 7);
   });
 });

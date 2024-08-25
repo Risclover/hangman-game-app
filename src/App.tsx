@@ -12,7 +12,7 @@ import "./assets/styles/variables.css";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = usePageHandler(0); // Custom hook for page management
+  const [page, setPage] = usePageHandler(0);
 
   const {
     guessedLetters,
@@ -33,7 +33,6 @@ function App() {
     selectCategory,
   } = useGame(setPage);
 
-  // Use custom hook for keypress event handling
   useKeyPressHandler({
     page,
     showWin,

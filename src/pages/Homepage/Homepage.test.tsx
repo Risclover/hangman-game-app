@@ -17,10 +17,7 @@ describe("Homepage Component", () => {
       />
     );
 
-    // Check if buttons are present
     expect(getByText("How to Play")).toBeInTheDocument();
-
-    // Check if images are rendered
     expect(getByRole("img", { name: "play-icon" })).toBeInTheDocument();
     expect(getByRole("img", { name: "logo" })).toBeInTheDocument();
   });

@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CategoriesPage } from "./CategoriesPage";
 
-// Mock the components used in CategoriesPage
 jest.mock("../components", () => ({
   InfoPageContainer: jest.fn(({ children }) => <div>{children}</div>),
   Category: jest.fn(({ onClick, category }) => (
@@ -10,7 +9,6 @@ jest.mock("../components", () => ({
   )),
 }));
 
-// Mock the data.json
 jest.mock("../../data.json", () => ({
   categories: {
     Animals: [{ name: "Elephant", selected: false }],
@@ -40,7 +38,6 @@ describe("CategoriesPage Component", () => {
       />
     );
 
-    // Check that the categories are rendered
     expect(screen.getByText("Animals")).toBeInTheDocument();
     expect(screen.getByText("Vehicles")).toBeInTheDocument();
     expect(screen.getByText("Sports")).toBeInTheDocument();
@@ -57,10 +54,8 @@ describe("CategoriesPage Component", () => {
       />
     );
 
-    // Simulate clicking the "Animals" category
     fireEvent.click(screen.getByText("Animals"));
 
-    // Check if selectCategory is called with "Animals"
     expect(mockSelectCategory).toHaveBeenCalledWith("Animals");
   });
 
@@ -75,7 +70,6 @@ describe("CategoriesPage Component", () => {
       />
     );
 
-    // Check that InfoPageContainer is rendered and contains the category buttons
-    expect(screen.getByText("Animals")).toBeInTheDocument(); // Ensures InfoPageContainer rendered its children
+    expect(screen.getByText("Animals")).toBeInTheDocument(); 
   });
 });

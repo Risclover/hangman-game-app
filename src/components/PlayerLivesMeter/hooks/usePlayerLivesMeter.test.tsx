@@ -1,8 +1,7 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { usePlayerLivesMeter } from "./usePlayerLivesMeter";
 
-// Test component that uses the usePlayerLivesMeter hook
 const TestPlayerLivesMeter = ({ lives }: { lives: number }) => {
   const { currentValue, maxValue } = usePlayerLivesMeter(lives);
   return (

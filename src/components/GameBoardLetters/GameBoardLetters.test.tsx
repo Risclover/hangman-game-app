@@ -1,9 +1,8 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { GameBoardLetters } from "./GameBoardLetters";
-import { alphabet } from "./data/alphabet"; // This is now a string
+import { alphabet } from "./data/alphabet";
 
-// Mock the GameBoardLetter component
 jest.mock("./GameBoardLetter", () => ({
   GameBoardLetter: ({
     letter,
@@ -31,13 +30,11 @@ describe("GameBoardLetters Component", () => {
       />
     );
 
-    // Assert that all letters in the alphabet string are rendered as buttons
     Array.from(alphabet).forEach((letter) => {
       const letterButton = screen.getByRole("button", { name: letter });
       expect(letterButton).toBeInTheDocument();
     });
 
-    // Check that the correct number of letters are rendered
     expect(screen.getAllByRole("button").length).toBe(alphabet.length);
   });
 
@@ -50,12 +47,10 @@ describe("GameBoardLetters Component", () => {
       />
     );
 
-    // Simulate clicking the first letter
     const firstLetter = alphabet[0];
     const firstLetterButton = screen.getByRole("button", { name: firstLetter });
     fireEvent.click(firstLetterButton);
 
-    // Assert that handleLetterClick is called with the correct letter
     expect(mockHandleLetterClick).toHaveBeenCalledWith(firstLetter);
   });
 });

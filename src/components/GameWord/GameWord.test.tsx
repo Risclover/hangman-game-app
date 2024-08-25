@@ -19,12 +19,10 @@ describe("GameWord", () => {
       <GameWord displayWord="word test" guessedLetters={["w", "o", "t"]} />
     );
 
-    // Check that the correct letters are rendered
     expect(getByText("w")).toBeInTheDocument();
     expect(getByText("o")).toBeInTheDocument();
     expect(getByText("t")).toBeInTheDocument();
 
-    // Verify the number of blank letters based on underscores
-    expect(container.querySelectorAll(".blank")).toHaveLength(4); // Adjust based on expected blanks
+    expect(container.querySelectorAll(".blank")).toHaveLength(4); 
   });
 });

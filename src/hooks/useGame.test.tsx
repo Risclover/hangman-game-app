@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { useGame } from "./useGame";
 
@@ -11,7 +11,6 @@ jest.mock("../../data.json", () => ({
   },
 }));
 
-// Test component to use the useGame hook
 const TestGameComponent = ({
   handlePageChange,
 }: {
@@ -63,21 +62,20 @@ describe("useGame Hook", () => {
 
     fireEvent.click(screen.getByText("Reset Game"));
 
-    expect(screen.getByTestId("game-word")).toHaveTextContent("Word:"); // Ensures that the word is reset
+    expect(screen.getByTestId("game-word")).toHaveTextContent("Word:"); 
     expect(screen.getByText("Lives: 8")).toBeInTheDocument();
-    expect(mockHandlePageChange).toHaveBeenCalledWith(2); // Navigates to page 2 when no category is set
+    expect(mockHandlePageChange).toHaveBeenCalledWith(2);
   });
 
   it("handles resetting the game and stays on page 3 if a category is set", () => {
     render(<TestGameComponent handlePageChange={mockHandlePageChange} />);
 
-    // Start the game to set a category
     fireEvent.click(screen.getByText("Start Game"));
     fireEvent.click(screen.getByText("Reset Game"));
 
     expect(screen.getByTestId("game-word")).toHaveTextContent("Word:"); // Ensures that the word is reset
     expect(screen.getByText("Lives: 8")).toBeInTheDocument();
-    expect(mockHandlePageChange).toHaveBeenCalledWith(3); // Ensures page stays on 3 after reset if category is set
+    expect(mockHandlePageChange).toHaveBeenCalledWith(3);
   });
 
   it("handles winning the game", () => {
@@ -85,7 +83,6 @@ describe("useGame Hook", () => {
 
     fireEvent.click(screen.getByText("Start Game"));
 
-    // Simulate guessing all letters correctly
     fireEvent.click(screen.getByText("Set Guessed Letters"));
 
     expect(screen.getByText("You Win!")).toBeInTheDocument();

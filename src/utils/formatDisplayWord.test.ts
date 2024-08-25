@@ -1,4 +1,4 @@
-import { formatDisplayWord } from "./formatDisplayWord"; // Adjust the path as necessary
+import { formatDisplayWord } from "./formatDisplayWord"; 
 
 describe("formatDisplayWord", () => {
   it("should format a single short word correctly", () => {

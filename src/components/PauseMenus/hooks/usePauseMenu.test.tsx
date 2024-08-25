@@ -1,9 +1,8 @@
-import "@testing-library/jest-dom"; // Import jest-dom for extended matchers
-import { render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import React, { useEffect } from "react";
+import { render, fireEvent } from "@testing-library/react";
 import { usePauseMenu } from "./usePauseMenu";
 
-// Test component that uses the hook
 const TestComponent = ({
   setCategory,
   setPage,
@@ -24,7 +23,7 @@ const TestComponent = ({
 
   useEffect(() => {
     const event = new KeyboardEvent("keydown", { key: "Escape" });
-    document.dispatchEvent(event); // Trigger keydown on Escape for the test
+    document.dispatchEvent(event);
   }, []);
 
   return (
@@ -90,6 +89,6 @@ describe("usePauseMenu Hook", () => {
       />
     );
 
-    expect(mockSetShow).toHaveBeenCalledWith(false); // Escape should trigger setShow(false)
+    expect(mockSetShow).toHaveBeenCalledWith(false); 
   });
 });

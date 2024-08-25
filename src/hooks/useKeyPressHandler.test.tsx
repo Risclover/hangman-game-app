@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom"; 
 import { useKeyPressHandler } from "./useKeyPressHandler";
 import { render } from "@testing-library/react";
 

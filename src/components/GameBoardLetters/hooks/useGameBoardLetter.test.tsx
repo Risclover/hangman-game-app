@@ -56,7 +56,6 @@ describe("useGameBoardLetter custom hook", () => {
     const button = getByRole("button", { name: "A" });
     expect(button).not.toBeDisabled();
 
-    // Rerender with "A" in guessedLetters
     rerender(
       <TestComponent
         letter="A"

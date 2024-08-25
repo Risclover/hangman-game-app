@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom"; 
 import { render, screen } from "@testing-library/react";
 import { InfoPageContainer } from "./InfoPageContainer";
 import { InfoPageHeader } from "../../components";
@@ -17,13 +17,11 @@ describe("InfoPageContainer", () => {
       </InfoPageContainer>
     );
 
-    // Check if the header is rendered with the mocked InfoPageHeader
     expect(InfoPageHeader).toHaveBeenCalledWith(
       { setPage: mockSetPage, title: "Test Title" },
       {}
     );
 
-    // Check if the children are rendered
     expect(screen.getByText("Test Children")).toBeInTheDocument();
   });
 
@@ -34,7 +32,6 @@ describe("InfoPageContainer", () => {
       </InfoPageContainer>
     );
 
-    // Check for background and foreground elements by className
     expect(document.querySelector(".info-page-background")).toBeInTheDocument();
     expect(document.querySelector(".info-page-foreground")).toBeInTheDocument();
   });

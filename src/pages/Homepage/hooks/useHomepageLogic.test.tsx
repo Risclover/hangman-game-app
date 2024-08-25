@@ -1,9 +1,8 @@
+import { useState } from "react";
 import "@testing-library/jest-dom";
 import { render, fireEvent } from "@testing-library/react";
-import { useState } from "react";
 import { useHomepageLogic } from "./useHomepageLogic";
 
-// Test component to use the useHomepageLogic hook
 const TestComponent = ({ initialPage }: { initialPage: number }) => {
   const [page, setPage] = useState(initialPage);
 

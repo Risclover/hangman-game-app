@@ -1,8 +1,7 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { HowToPlayPage } from "./HowToPlayPage";
 
-// Mock the components used in HowToPlayPage
 jest.mock("../../components", () => ({
   InfoPageContainer: jest.fn(({ children }) => <div>{children}</div>),
   HowToPlayStep: jest.fn(({ number, title, content }) => (
@@ -15,7 +14,6 @@ jest.mock("../../components", () => ({
   )),
 }));
 
-// Mock the steps data
 jest.mock("./data/steps", () => ({
   steps: [
     { number: 1, title: "Step 1 Title", content: "Step 1 Content" },
@@ -33,7 +31,6 @@ describe("HowToPlayPage Component", () => {
   it("renders the HowToPlayPage with the correct steps", () => {
     render(<HowToPlayPage setPage={mockSetPage} title="How to Play" />);
 
-    // Check if the steps are rendered correctly
     expect(screen.getByText("Step 1: Step 1 Title")).toBeInTheDocument();
     expect(screen.getByText("Step 1 Content")).toBeInTheDocument();
     expect(screen.getByText("Step 2: Step 2 Title")).toBeInTheDocument();
@@ -43,7 +40,6 @@ describe("HowToPlayPage Component", () => {
   it("renders InfoPageContainer with the correct children", () => {
     render(<HowToPlayPage setPage={mockSetPage} title="How to Play" />);
 
-    // Check that the InfoPageContainer is rendered
-    expect(screen.getByText("Step 1: Step 1 Title")).toBeInTheDocument(); // This ensures the InfoPageContainer rendered its children
+    expect(screen.getByText("Step 1: Step 1 Title")).toBeInTheDocument(); 
   });
 });

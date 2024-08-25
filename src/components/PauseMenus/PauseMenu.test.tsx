@@ -1,9 +1,8 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { PauseMenu } from "./PauseMenu";
 import { usePauseMenu } from "./hooks/usePauseMenu";
 
-// Mock FocusTrap to avoid issues during testing
 jest.mock("focus-trap-react", () => ({
   __esModule: true,
   default: ({ children }: { children: React.ReactNode }) => (
@@ -11,7 +10,6 @@ jest.mock("focus-trap-react", () => ({
   ),
 }));
 
-// Mock the PrimaryBtn and usePauseMenu hook
 jest.mock("../../components", () => ({
   PrimaryBtn: jest.fn(({ value, onClick }) => (
     <button onClick={onClick}>{value}</button>
@@ -30,7 +28,6 @@ describe("PauseMenu", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    // Provide default mocked values for the usePauseMenu hook
     (usePauseMenu as jest.Mock).mockReturnValue({
       handleNewCategory: jest.fn(),
       handleQuitGame: jest.fn(),
@@ -49,7 +46,6 @@ describe("PauseMenu", () => {
       />
     );
 
-    // Check if the title and buttons are rendered
     expect(screen.getByText("Paused")).toBeInTheDocument();
     expect(screen.getByText("Continue")).toBeInTheDocument();
     expect(screen.getByText("New Category")).toBeInTheDocument();
@@ -76,15 +72,12 @@ describe("PauseMenu", () => {
       />
     );
 
-    // Simulate "Continue" button click
     fireEvent.click(screen.getByText("Continue"));
     expect(mockSetShow).toHaveBeenCalledWith(false);
 
-    // Simulate "New Category" button click
     fireEvent.click(screen.getByText("New Category"));
     expect(mockHandleNewCategory).toHaveBeenCalled();
 
-    // Simulate "Quit Game" button click
     fireEvent.click(screen.getByText("Quit Game"));
     expect(mockHandleQuitGame).toHaveBeenCalled();
   });
@@ -101,7 +94,6 @@ describe("PauseMenu", () => {
       />
     );
 
-    // Simulate "Play Again!" button click
     fireEvent.click(screen.getByText("Play Again!"));
     expect(mockResetGame).toHaveBeenCalled();
     expect(mockSetShow).toHaveBeenCalledWith(false);

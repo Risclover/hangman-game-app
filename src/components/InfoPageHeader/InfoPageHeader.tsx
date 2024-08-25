@@ -1,6 +1,7 @@
 import React, { SetStateAction } from "react";
 import { CircleBtn, InfoPageTitle } from "../../components";
 import CircleBtnIcon from "../../assets/images/icon-back.svg";
+
 type Props = {
   setPage: React.Dispatch<SetStateAction<number>>;
   title: string;

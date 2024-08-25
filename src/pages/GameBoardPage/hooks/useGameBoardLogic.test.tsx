@@ -1,9 +1,8 @@
-import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
+import "@testing-library/jest-dom";
 import { render, fireEvent } from "@testing-library/react";
 import { useState } from "react";
 import { useGameBoardLogic } from "./useGameBoardLogic";
 
-// Test component for embedding the hook
 const TestComponent = ({ gameWord }: { gameWord: string }) => {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [lives, setLives] = useState(5);

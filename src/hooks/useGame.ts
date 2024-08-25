@@ -1,4 +1,3 @@
-// hooks/useGame.js
 import { useState, useEffect } from "react";
 import allData from "../../data.json";
 
