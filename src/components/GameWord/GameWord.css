@@ -83,3 +83,14 @@
     width: 20px;
   }
 }
+
+@media (max-width: 360px) {
+  .game-board-letter {
+    width: 100%;
+    min-width: 40px;
+  }
+
+  .game-board-line {
+    gap: 4px;
+  }
+}

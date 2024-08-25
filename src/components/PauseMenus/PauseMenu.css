@@ -119,4 +119,9 @@
   .pause-menu-title-container {
     margin-top: -50px;
   }
+
+  .pause-menu-btns button {
+    font-size: 24px;
+    height: auto;
+  }
 }

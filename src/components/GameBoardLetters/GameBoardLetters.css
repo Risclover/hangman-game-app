@@ -48,8 +48,9 @@
     left: 0;
     gap: 24px 16px;
     bottom: calc(114px - 61px);
-    margin-left: 0;
+    margin-left: auto;
   }
+
   .game-board-letter-container {
     width: 100%;
   }

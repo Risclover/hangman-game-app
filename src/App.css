@@ -190,8 +190,7 @@
 
 @media (max-width: 1439px) {
   .info-page-container {
-    padding: 0 44px;
-    padding-top: 61px;
+    padding: 61px 44px;
     max-width: 768px;
   }
 
@@ -219,10 +218,9 @@
 
 @media (max-width: 767px) {
   .info-page-container {
-    padding: 0;
-    /* padding-top: 32px; */
     margin-top: 0;
     max-width: 375px;
+    padding: 32px 30px;
   }
   .info-page-title {
     letter-spacing: 0.05em;
@@ -245,6 +243,16 @@
   }
 
   .game-board-page-container {
-    padding: 0;
+    padding: 32px 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .info-page-container {
+    padding: 32px 5px;
+  }
+
+  .game-board-page-container {
+    padding: 10px;
   }
 }
