@@ -1,8 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { GameBoardPageHeader } from "./GameBoardPageHeader";
-import MenuIcon from "../../assets/images/icon-menu.svg";
-import HeartIcon from "../../assets/images/icon-heart.svg";
 
 // Mock the CircleBtn and PlayerLivesMeter components
 jest.mock("../../components", () => ({
