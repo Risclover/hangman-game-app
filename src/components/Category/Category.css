@@ -22,7 +22,7 @@
 
 .category-container:hover,
 .category-container:focus {
-  background: #84a7ff;
+  background: #a3bdff;
 }
 
 @media (max-width: 1439px) {
