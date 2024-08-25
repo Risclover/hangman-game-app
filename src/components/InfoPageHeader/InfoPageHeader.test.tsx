@@ -3,6 +3,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { InfoPageHeader } from "./InfoPageHeader";
 import { CircleBtn, InfoPageTitle } from "../../components";
 
+// Mock the SVG
+jest.mock("../../assets/images/icon-back.svg", () => "MockedSVG");
+
 // Mock the CircleBtn and InfoPageTitle components
 jest.mock("../../components", () => ({
   CircleBtn: jest.fn(({ onClick }) => (
@@ -21,7 +24,10 @@ describe("InfoPageHeader", () => {
 
     // Check if CircleBtn and InfoPageTitle are rendered
     expect(CircleBtn).toHaveBeenCalledWith(
-      { onClick: expect.any(Function), value: "/assets/images/icon-back.svg" },
+      {
+        onClick: expect.any(Function),
+        value: "MockedSVG", // The mocked value for the SVG
+      },
       {}
     );
     expect(InfoPageTitle).toHaveBeenCalledWith({ title: "Test Title" }, {});

@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CircleBtn } from "./CircleBtn";
+import MenuIcon from "../../assets/images/icon-menu.svg"; // Import the same SVG in the test
 
 describe("CircleBtn Component", () => {
   test("renders the button with the correct image src", () => {
@@ -27,8 +28,7 @@ describe("CircleBtn Component", () => {
   });
 
   test("applies 'centered' class when value equals MenuIcon path", () => {
-    const value = "/assets/images/icon-menu.svg"; // Simulating the specific path
-    render(<CircleBtn value={value} onClick={() => {}} />);
+    render(<CircleBtn value={MenuIcon} onClick={() => {}} />); // Use the imported MenuIcon
 
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toHaveClass("centered");
