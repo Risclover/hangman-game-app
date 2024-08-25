@@ -4,7 +4,7 @@ import { CircleBtn } from "./CircleBtn";
 
 describe("CircleBtn Component", () => {
   test("renders the button with the correct image src", () => {
-    const value = "/hangman-game-app/src/assets/images/test-icon.svg";
+    const value = "/assets/images/test-icon.svg";
     render(<CircleBtn value={value} onClick={() => {}} />);
 
     // Assert that the button renders with the correct image src
@@ -14,7 +14,7 @@ describe("CircleBtn Component", () => {
 
   test("calls onClick when the button is clicked", () => {
     const handleClick = jest.fn();
-    const value = "/hangman-game-app/src/assets/images/test-icon.svg";
+    const value = "/assets/images/test-icon.svg";
 
     render(<CircleBtn value={value} onClick={handleClick} />);
 
@@ -27,7 +27,7 @@ describe("CircleBtn Component", () => {
   });
 
   test("applies 'centered' class when value equals MenuIcon path", () => {
-    const value = "/hangman-game-app/src/assets/images/icon-menu.svg"; // Simulating the specific path
+    const value = "/assets/images/icon-menu.svg"; // Simulating the specific path
     render(<CircleBtn value={value} onClick={() => {}} />);
 
     const buttonElement = screen.getByRole("button");
@@ -35,7 +35,7 @@ describe("CircleBtn Component", () => {
   });
 
   test("does not apply 'centered' class when value is not MenuIcon path", () => {
-    const value = "/hangman-game-app/src/assets/images/another-icon.svg";
+    const value = "/assets/images/another-icon.svg";
     render(<CircleBtn value={value} onClick={() => {}} />);
 
     const buttonElement = screen.getByRole("button");

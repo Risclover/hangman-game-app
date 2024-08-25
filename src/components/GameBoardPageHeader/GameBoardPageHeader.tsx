@@ -13,8 +13,8 @@ export const GameBoardPageHeader = ({
   lives,
   setShowPauseMenu,
 }: Props) => {
-  const menuIconUrl = "/hangman-game-app/src/assets/images/icon-menu.svg";
-  const heartIconUrl = "/hangman-game-app/src/assets/images/icon-heart.svg";
+  const menuIconUrl = "/assets/images/icon-menu.svg";
+  const heartIconUrl = "/assets/images/icon-heart.svg";
 
   return (
     <div className="game-board-page-header">

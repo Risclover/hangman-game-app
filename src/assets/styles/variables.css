@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "MouseMemoirs-Regular";
-  src: local("MouseMemoirs-Regular"),
-    url("/hangman-game-app/src/assets/fonts/MouseMemoirs-Regular.ttf");
+  font-family: MouseMemoirs-Regular;
+  src: url("assets/fonts/MouseMemoirs-Regular.ttf");
 }
 
 :root {
