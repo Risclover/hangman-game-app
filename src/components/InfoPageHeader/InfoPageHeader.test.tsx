@@ -21,7 +21,10 @@ describe("InfoPageHeader", () => {
 
     // Check if CircleBtn and InfoPageTitle are rendered
     expect(CircleBtn).toHaveBeenCalledWith(
-      { onClick: expect.any(Function), value: "/assets/images/icon-back.svg" },
+      {
+        onClick: expect.any(Function),
+        value: "/hangman-game-app/src/assets/images/icon-back.svg",
+      },
       {}
     );
     expect(InfoPageTitle).toHaveBeenCalledWith({ title: "Test Title" }, {});

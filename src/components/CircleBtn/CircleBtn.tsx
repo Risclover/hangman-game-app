@@ -8,7 +8,8 @@ type Props = {
 
 export const CircleBtn = ({ value, onClick }: Props) => {
   // Assume "MenuIcon" refers to a specific string, which could be a filename or identifier
-  const isMenuIcon = value === "/assets/images/icon-menu.svg";
+  const isMenuIcon =
+    value === "/hangman-game-app/src/assets/images/icon-menu.svg";
 
   return (
     <button

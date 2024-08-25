@@ -34,7 +34,7 @@ describe("GameBoardPageHeader Component", () => {
 
     // Check that the CircleBtn is rendered with the correct icon URL
     const circleBtn = screen.getByRole("button", {
-      name: "/assets/images/icon-menu.svg",
+      name: "/hangman-game-app/src/assets/images/icon-menu.svg",
     });
     expect(circleBtn).toBeInTheDocument();
 
@@ -44,7 +44,10 @@ describe("GameBoardPageHeader Component", () => {
 
     // Check that the heart icon is rendered with the correct image URL
     const heartIcon = screen.getByRole("img");
-    expect(heartIcon).toHaveAttribute("src", "/assets/images/icon-heart.svg");
+    expect(heartIcon).toHaveAttribute(
+      "src",
+      "/hangman-game-app/src/assets/images/icon-heart.svg"
+    );
   });
 
   test("calls setShowPauseMenu when the menu button is clicked", () => {
@@ -58,7 +61,7 @@ describe("GameBoardPageHeader Component", () => {
 
     // Simulate a click on the CircleBtn
     const circleBtn = screen.getByRole("button", {
-      name: "/assets/images/icon-menu.svg",
+      name: "/hangman-game-app/src/assets/images/icon-menu.svg",
     });
     fireEvent.click(circleBtn);
 
