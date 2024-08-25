@@ -1,6 +1,5 @@
 import "@testing-library/jest-dom"; // Importing jest-dom for extended matchers
 import { render, fireEvent } from "@testing-library/react";
-import React from "react";
 import { usePageHandler } from "./usePageHandler";
 
 describe("usePageHandler", () => {

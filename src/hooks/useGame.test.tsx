@@ -18,7 +18,6 @@ const TestGameComponent = ({
   handlePageChange: (newPage: number) => void;
 }) => {
   const {
-    guessedLetters,
     setGuessedLetters,
     gameWord,
     lives,
