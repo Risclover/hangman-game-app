@@ -2,7 +2,6 @@
   text-transform: uppercase;
   font-family: "MouseMemoirs-Regular";
   border-radius: 40px;
-  padding: 12px 64px;
   font-size: 32px;
   line-height: 120%;
   letter-spacing: 0.05em;
@@ -19,6 +18,8 @@
   align-items: center;
   justify-content: center;
   border: 0;
+  width: 100%;
+  max-width: 260px;
 }
 
 .primary-btn:hover,
