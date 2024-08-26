@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { SetStateAction, useEffect } from "react";
 
 export function useKeyPressHandler({
   page,
@@ -8,6 +8,8 @@ export function useKeyPressHandler({
   setShowPauseMenu,
   setPage,
   resetGame,
+  errorMessage,
+  handleShowError,
 }: {
   page: number;
   showWin: boolean;
@@ -16,7 +18,25 @@ export function useKeyPressHandler({
   setShowPauseMenu: (value: boolean) => void;
   setPage: (page: number) => void;
   resetGame: () => void;
+  errorMessage: string;
+  handleShowError: () => void;
 }) {
+  useEffect(() => {
+    const handleErrorKeyPress = (e: KeyboardEvent) => {
+      if (errorMessage !== "") {
+        if (e.key === "Escape" || e.key === "Enter") {
+          handleShowError();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleErrorKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleErrorKeyPress);
+    };
+  }, [errorMessage]);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {

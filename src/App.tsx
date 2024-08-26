@@ -32,6 +32,7 @@ function App() {
     handleStartGame,
     selectCategory,
     errorMessage,
+    setErrorMessage,
     showErrorMessage,
     handleShowError,
   } = useGame(setPage);
@@ -44,6 +45,8 @@ function App() {
     setShowPauseMenu,
     setPage,
     resetGame,
+    errorMessage,
+    handleShowError,
   });
 
   const pages = [

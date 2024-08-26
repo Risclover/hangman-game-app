@@ -1,8 +1,8 @@
-import FocusTrap from "focus-trap-react";
-import { PrimaryBtn } from "..";
-import "./PauseMenu.css";
 import React, { SetStateAction } from "react";
+import { PrimaryBtn } from "..";
+import FocusTrap from "focus-trap-react";
 import { usePauseMenu } from "./hooks/usePauseMenu";
+import "./PauseMenu.css";
 
 type Props = {
   title: string;

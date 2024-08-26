@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom"; 
+import "@testing-library/jest-dom";
 import { useKeyPressHandler } from "./useKeyPressHandler";
 import { render } from "@testing-library/react";
 
@@ -6,17 +6,20 @@ describe("useKeyPressHandler", () => {
   const mockSetShowPauseMenu = jest.fn();
   const mockSetPage = jest.fn();
   const mockResetGame = jest.fn();
+  const mockHandleShowError = jest.fn();
 
   const TestComponent = ({
     page,
     showWin,
     showLose,
     showPauseMenu,
+    errorMessage = "",
   }: {
     page: number;
     showWin: boolean;
     showLose: boolean;
     showPauseMenu: boolean;
+    errorMessage?: string;
   }) => {
     useKeyPressHandler({
       page,
@@ -26,6 +29,8 @@ describe("useKeyPressHandler", () => {
       setShowPauseMenu: mockSetShowPauseMenu,
       setPage: mockSetPage,
       resetGame: mockResetGame,
+      errorMessage,
+      handleShowError: mockHandleShowError,
     });
 
     return <div />;
@@ -53,7 +58,7 @@ describe("useKeyPressHandler", () => {
     expect(mockResetGame).not.toHaveBeenCalled();
   });
 
-  it("resets the game when Escape is pressed and showWin is true", () => {
+  it("resets the game when Escape is pressed and showWin or showLose is true", () => {
     render(
       <TestComponent
         page={3}
@@ -85,5 +90,26 @@ describe("useKeyPressHandler", () => {
     document.dispatchEvent(event);
 
     expect(mockSetPage).toHaveBeenCalledWith(0);
+  });
+
+  // New test case for error message handling
+  it("calls handleShowError when Escape or Enter is pressed and there is an error message", () => {
+    render(
+      <TestComponent
+        page={3}
+        showWin={false}
+        showLose={false}
+        showPauseMenu={false}
+        errorMessage="Error occurred"
+      />
+    );
+
+    const escapeEvent = new KeyboardEvent("keydown", { key: "Escape" });
+    document.dispatchEvent(escapeEvent);
+    expect(mockHandleShowError).toHaveBeenCalledTimes(1);
+
+    const enterEvent = new KeyboardEvent("keydown", { key: "Enter" });
+    document.dispatchEvent(enterEvent);
+    expect(mockHandleShowError).toHaveBeenCalledTimes(2);
   });
 });
