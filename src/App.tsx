@@ -32,7 +32,6 @@ function App() {
     handleStartGame,
     selectCategory,
     errorMessage,
-    setErrorMessage,
     showErrorMessage,
     handleShowError,
   } = useGame(setPage);

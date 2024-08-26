@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect } from "react";
+import { useEffect } from "react";
 
 export function useKeyPressHandler({
   page,

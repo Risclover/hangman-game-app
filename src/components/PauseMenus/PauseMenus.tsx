@@ -38,12 +38,10 @@ export const PauseMenus: React.FC<PauseMenusProps> = ({
         (menu, idx) =>
           menu.show && (
             <PauseMenu
-              showMenu={menu.show && true}
               key={idx}
               setPage={setPage}
               title={menu.title}
               setShow={menu.setShow}
-              show={menu.show}
               resetGame={resetGame}
               handleStartGame={handleStartGame}
               setCategory={setCategory}
