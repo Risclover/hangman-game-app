@@ -13,6 +13,7 @@ export const HowToPlayPage = ({ setPage, title }: Props) => {
       <ul className="how-to-play-steps">
         {steps.map((step) => (
           <HowToPlayStep
+            id={`step-${step.number}`}
             key={step.number}
             number={step.number}
             title={step.title}
