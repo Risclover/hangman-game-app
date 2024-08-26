@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import allData from "../../data.json";
 
 export const useGame = (handlePageChange: (newPage: number) => void) => {
