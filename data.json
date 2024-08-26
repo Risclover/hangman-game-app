@@ -141,7 +141,6 @@
       { "name": "No Country for Old Men", "selected": false },
       { "name": "Once Upon a Time in America", "selected": false },
       { "name": "Once Upon a Time in the West", "selected": false },
-      { "name": "One Flew Over the Cuckoos Nest", "selected": false },
       { "name": "Pulp Fiction", "selected": false },
       { "name": "Psycho", "selected": false },
       { "name": "Requiem for a Dream", "selected": false },
@@ -158,6 +157,7 @@
       { "name": "The Sixth Sense", "selected": false },
       { "name": "The Truman Show", "selected": false },
       { "name": "The Wolf of Wall Street", "selected": false },
+      { "name": "Titanic", "selected": false },
       { "name": "Toy Story", "selected": false }
     ],
     "Wizarding World": [
