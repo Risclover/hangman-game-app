@@ -1,5 +1,6 @@
 export * from "./Category";
 export * from "./CircleBtn";
+export * from "./ErrorMessage";
 export * from "./GameBoardLetters";
 export * from "./GameBoardPageHeader";
 export * from "./GameWord";

@@ -4,7 +4,7 @@ import {
   CategoriesPage,
   GameBoardPage,
 } from "./pages";
-import { PauseMenus } from "./components";
+import { ErrorMessage, PauseMenus } from "./components";
 import { useGame } from "./hooks/useGame";
 import { useKeyPressHandler } from "./hooks/useKeyPressHandler";
 import { usePageHandler } from "./hooks/usePageHandler";
@@ -31,6 +31,10 @@ function App() {
     resetGame,
     handleStartGame,
     selectCategory,
+    errorMessage,
+    showErrorMessage,
+    handleShowError,
+    disabledCategories,
   } = useGame(setPage);
 
   useKeyPressHandler({
@@ -52,6 +56,7 @@ function App() {
       setCategory={setCategory}
       handleStartGame={handleStartGame}
       selectCategory={selectCategory}
+      disabledCategories={disabledCategories}
     />,
     <GameBoardPage
       category={category}
@@ -71,6 +76,12 @@ function App() {
 
   return (
     <main className="main-container">
+      {showErrorMessage && (
+        <ErrorMessage
+          errorMessage={errorMessage}
+          handleShowError={handleShowError}
+        />
+      )}
       {pages[page]}
       <PauseMenus
         showPauseMenu={showPauseMenu}

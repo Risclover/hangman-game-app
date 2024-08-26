@@ -70,6 +70,6 @@ describe("CategoriesPage Component", () => {
       />
     );
 
-    expect(screen.getByText("Animals")).toBeInTheDocument(); 
+    expect(screen.getByText("Animals")).toBeInTheDocument();
   });
 });
