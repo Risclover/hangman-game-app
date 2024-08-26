@@ -76,10 +76,6 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
   };
 
   useEffect(() => {
-    console.log("errorMessage:", errorMessage);
-  }, [errorMessage]);
-
-  useEffect(() => {
     if (lives === 0) {
       setShowLose(true);
     }
