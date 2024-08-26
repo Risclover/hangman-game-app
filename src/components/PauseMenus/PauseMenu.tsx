@@ -1,4 +1,4 @@
-import React, { SetStateAction } from "react";
+import React, { SetStateAction, useEffect } from "react";
 import { PrimaryBtn } from "..";
 import FocusTrap from "focus-trap-react";
 import { usePauseMenu } from "./hooks/usePauseMenu";
@@ -11,6 +11,7 @@ type Props = {
   setCategory: React.Dispatch<SetStateAction<string>>;
   resetGame: () => void;
   handleStartGame: (categoryName: string, word: string) => void;
+  showMenu: boolean;
 };
 
 export const PauseMenu = ({
@@ -19,6 +20,7 @@ export const PauseMenu = ({
   title,
   setShow,
   resetGame,
+  showMenu,
 }: Props) => {
   const { handleNewCategory, handleQuitGame } = usePauseMenu(
     setCategory,
@@ -29,7 +31,7 @@ export const PauseMenu = ({
 
   return (
     <FocusTrap focusTrapOptions={{ initialFocus: false }}>
-      <nav className="pause-menu">
+      <nav className={`pause-menu${showMenu ? " open" : ""}`}>
         <div className="pause-menu-background"></div>
         <div className="pause-menu-foreground">
           <div className="pause-menu-box">

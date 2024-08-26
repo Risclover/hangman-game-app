@@ -18,6 +18,13 @@
   border: 0;
   outline: 0;
   font-family: "MouseMemoirs-Regular", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-container:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .category-container:hover,
@@ -42,5 +49,10 @@
     line-height: 120%;
     height: auto;
     border-radius: 20px;
+  }
+
+  .category-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 }

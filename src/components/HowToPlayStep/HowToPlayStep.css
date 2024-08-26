@@ -4,6 +4,9 @@
   grid-template-columns: auto auto auto;
   gap: 32px;
   vertical-align: top;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  max-height: 100vh;
 }
 
 .how-to-play-step-container {
@@ -20,6 +23,32 @@
   gap: 40px;
   /* grid-template-rows: auto auto auto; */
   text-align: center;
+  transform: translateY(100vh);
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#step-01 {
+  animation: slideUp 0.5s 0.1s forwards;
+}
+#step-02 {
+  animation: slideUp 0.5s 0.4s forwards;
+}
+
+#step-03 {
+  animation: slideUp 0.5s 0.7s forwards;
 }
 
 .how-to-play-step-container h2 {
