@@ -4,16 +4,11 @@ import "./Category.css";
 type Props = {
   category: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
-  disabled: boolean;
 };
 
-export const Category = ({ category, onClick, disabled }: Props) => {
+export const Category = ({ category, onClick }: Props) => {
   return (
-    <button
-      className="category-container"
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button className="category-container" onClick={onClick}>
       {category}
     </button>
   );

@@ -34,7 +34,6 @@ function App() {
     errorMessage,
     showErrorMessage,
     handleShowError,
-    disabledCategories,
   } = useGame(setPage);
 
   useKeyPressHandler({
@@ -56,7 +55,6 @@ function App() {
       setCategory={setCategory}
       handleStartGame={handleStartGame}
       selectCategory={selectCategory}
-      disabledCategories={disabledCategories}
     />,
     <GameBoardPage
       category={category}

@@ -2,14 +2,14 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CategoriesPage } from "./CategoriesPage";
 
-jest.mock("../components", () => ({
+jest.mock("../../components", () => ({
   InfoPageContainer: jest.fn(({ children }) => <div>{children}</div>),
   Category: jest.fn(({ onClick, category }) => (
     <button onClick={onClick}>{category}</button>
   )),
 }));
 
-jest.mock("../../data.json", () => ({
+jest.mock("../../../data.json", () => ({
   categories: {
     Animals: [{ name: "Elephant", selected: false }],
     Vehicles: [{ name: "Car", selected: false }],

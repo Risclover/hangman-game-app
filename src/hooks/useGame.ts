@@ -12,7 +12,6 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [lastSelectedWord, setLastSelectedWord] = useState<string | null>(null);
-  const [disabledCategories, setDisabledCategories] = useState<string[]>([]);
 
   const data = allData as {
     categories: { [key: string]: { name: string; selected: boolean }[] };
@@ -133,6 +132,5 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
     setErrorMessage,
     showErrorMessage,
     handleShowError,
-    disabledCategories,
   };
 };
