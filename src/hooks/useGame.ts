@@ -72,7 +72,7 @@ export const useGame = (handlePageChange: (newPage: number) => void) => {
     handleStartGame(category, selectedItem.name);
     setLastSelectedWord(selectedItem.name);
     setErrorMessage(""); // Clear any previous error message
-    handlePageChange(3);
+    handlePageChange(0);
   };
 
   useEffect(() => {
