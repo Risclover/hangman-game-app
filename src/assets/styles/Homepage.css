@@ -11,7 +11,6 @@
 
 .hangman-logo {
   left: 25%;
-  transform: translateX(-50%, 0);
   top: -100px;
   z-index: 10;
 }
