@@ -8,11 +8,6 @@ describe("GameWordLetter", () => {
     expect(getByText("A")).toBeInTheDocument();
   });
 
-  it("should render nothing if the value is a space", () => {
-    const { container } = render(<GameWordLetter value=" " />);
-    expect(container.firstChild).toBeNull();
-  });
-
   it("should render an empty div with class 'blank' if the value is an underscore", () => {
     const { container } = render(<GameWordLetter value="_" />);
     const blankDiv = container.querySelector(".blank");

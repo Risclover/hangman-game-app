@@ -8,7 +8,7 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "include": ["/src/custom.d.ts"],
+  "include": ["src", "src/types"],
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
