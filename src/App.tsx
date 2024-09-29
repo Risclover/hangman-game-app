@@ -10,7 +10,6 @@ import { useKeyPressHandler } from "./hooks/useKeyPressHandler";
 import { usePageHandler } from "./hooks/usePageHandler";
 import "./assets/styles/variables.css";
 import "./App.css";
-import { useEffect } from "react";
 
 function App() {
   const [page, setPage] = usePageHandler(0);
@@ -50,15 +49,15 @@ function App() {
   });
 
   const pages = [
-    // <Homepage setPage={setPage} page={page} />,
-    // <HowToPlayPage setPage={setPage} title="How to Play" />,
-    // <CategoriesPage
-    //   setPage={setPage}
-    //   title="Pick a Category"
-    //   setCategory={setCategory}
-    //   handleStartGame={handleStartGame}
-    //   selectCategory={selectCategory}
-    // />,
+    <Homepage setPage={setPage} page={page} />,
+    <HowToPlayPage setPage={setPage} title="How to Play" />,
+    <CategoriesPage
+      setPage={setPage}
+      title="Pick a Category"
+      setCategory={setCategory}
+      handleStartGame={handleStartGame}
+      selectCategory={selectCategory}
+    />,
     <GameBoardPage
       category={category}
       setPage={setPage}
@@ -72,13 +71,8 @@ function App() {
       setShowLose={setShowLose}
       lives={lives}
       setLives={setLives}
-      selectCategory={selectCategory}
     />,
   ];
-
-  useEffect(() => {
-    selectCategory("Countries");
-  }, []);
 
   return (
     <main className="main-container">
